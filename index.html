@@ -6,28 +6,30 @@
 <meta name="author" content="Sina Shojaeian (3INA3)">
 <meta name="copyright" content="© 2026 Sina Shojaeian (3INA3). All Rights Reserved. Unauthorized distribution, modification or commercial use prohibited. Official source: github.com/3INA3">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>لغات انگلیسی فناوری اطلاعات · Sina Shojaeian (3INA3)</title>
+<meta name="description" content="واژه‌نامه تخصصی فناوری اطلاعات — ۲۰ واحد، ۴۰۰+ اصطلاح تخصصی کامپیوتر با تلفظ، ترجمه فارسی و فلش‌کارت حرفه‌ای">
+<title>لغات تخصصی فناوری اطلاعات · ۲۰ واحد · فلش‌کارت · Sina Shojaeian (3INA3)</title>
 <style>
 :root{
   --ink:#14213d;--mut:#4b5a78;--g:rgba(255,255,255,.42);--gb:rgba(255,255,255,.65);
-  --ac:#0a84ff;--bg1:#8ec5ff;--bg2:#c7a6ff;--bg3:#ffb8d2;
-  --card:rgba(255,255,255,.38);--wm:rgba(20,33,61,.06);
+  --ac:#0a84ff;--ac2:#a855f7;--bg1:#8ec5ff;--bg2:#c7a6ff;--bg3:#ffb8d2;
+  --card:rgba(255,255,255,.38);--wm:rgba(20,33,61,.06);--star:#fbbf24;
+  --success:#22c55e;--danger:#ef4444;
 }
 @media(prefers-color-scheme:dark){
   :root{
     --ink:#f2f5ff;--mut:#b4c0dc;--g:rgba(30,36,64,.55);--gb:rgba(255,255,255,.18);
-    --ac:#5ac8fa;--bg1:#0b1030;--bg2:#27124d;--bg3:#3a0f3d;
+    --ac:#5ac8fa;--ac2:#c084fc;--bg1:#0b1030;--bg2:#27124d;--bg3:#3a0f3d;
     --card:rgba(30,36,64,.55);--wm:rgba(242,245,255,.04);
   }
 }
 body.dark{
   --ink:#f2f5ff;--mut:#b4c0dc;--g:rgba(30,36,64,.55);--gb:rgba(255,255,255,.18);
-  --ac:#5ac8fa;--bg1:#0b1030;--bg2:#27124d;--bg3:#3a0f3d;
+  --ac:#5ac8fa;--ac2:#c084fc;--bg1:#0b1030;--bg2:#27124d;--bg3:#3a0f3d;
   --card:rgba(30,36,64,.55);--wm:rgba(242,245,255,.04);
 }
 body.light{
   --ink:#14213d;--mut:#4b5a78;--g:rgba(255,255,255,.42);--gb:rgba(255,255,255,.65);
-  --ac:#0a84ff;--bg1:#8ec5ff;--bg2:#c7a6ff;--bg3:#ffb8d2;
+  --ac:#0a84ff;--ac2:#a855f7;--bg1:#8ec5ff;--bg2:#c7a6ff;--bg3:#ffb8d2;
   --card:rgba(255,255,255,.38);--wm:rgba(20,33,61,.06);
 }
 *{box-sizing:border-box}
@@ -46,8 +48,7 @@ body{
 /* 3D Watermark */
 .wm-layer{
   position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
-  display:flex;flex-wrap:wrap;align-content:space-around;justify-content:space-around;
-  opacity:.9;
+  display:flex;flex-wrap:wrap;align-content:space-around;justify-content:space-around;opacity:.9;
 }
 .wm-layer span{
   font-size:clamp(1.8rem,4vw,3.2rem);font-weight:900;letter-spacing:.08em;
@@ -63,7 +64,7 @@ body{
   box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 10px 30px rgba(20,33,61,.14);
 }
 
-/* Heavy Copyright Banner */
+/* Copyright Banner */
 .copy-banner{
   max-width:1080px;margin:16px auto 8px;width:calc(100% - 24px);
   padding:18px 20px;border-radius:22px;text-align:center;
@@ -72,12 +73,10 @@ body{
 }
 .copy-banner h2{
   margin:0 0 8px;font-size:1.15rem;
-  background:linear-gradient(90deg,var(--ac),#a855f7,#f472b6);
+  background:linear-gradient(90deg,var(--ac),var(--ac2),#f472b6);
   -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800;
 }
-.copy-banner p{
-  margin:0;font-size:.78rem;line-height:1.85;color:var(--ink);opacity:.92;
-}
+.copy-banner p{margin:0;font-size:.78rem;line-height:1.85;color:var(--ink);opacity:.92}
 .copy-banner a{color:var(--ac);font-weight:700}
 
 header{
@@ -87,64 +86,286 @@ header{
 }
 h1{font-size:1.25rem;margin:0 0 2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .brand{font-size:.72rem;font-weight:700;letter-spacing:.04em;opacity:.85;
-  background:linear-gradient(90deg,var(--ac),#a855f7);-webkit-background-clip:text;
+  background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;
   background-clip:text;color:transparent}
 .sub{margin:0 0 10px;color:var(--mut);font-size:.82rem}
 input#q{
   width:100%;padding:12px 16px;border-radius:16px;border:1px solid var(--gb);
   background:rgba(255,255,255,.35);color:var(--ink);font:inherit;outline:none;
+  font-size:.95rem;
 }
+body.dark input#q{background:rgba(255,255,255,.06)}
 input:focus-visible,button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 2px;scrollbar-width:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 2px;scrollbar-width:thin}
 .chip{
   flex:none;border:1px solid var(--gb);background:rgba(255,255,255,.28);
   color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-size:.8rem;
-  cursor:pointer;transition:background .2s,transform .15s;
+  cursor:pointer;transition:background .2s,transform .15s;white-space:nowrap;
 }
+body.dark .chip{background:rgba(255,255,255,.08)}
 .chip[aria-pressed=true]{background:var(--ac);color:#fff;border-color:transparent;transform:scale(1.04)}
+.chip .n{opacity:.65;font-size:.7rem;margin-right:4px}
 .tools{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
 .tools button{
   border:1px solid var(--gb);background:rgba(255,255,255,.3);color:var(--ink);
-  border-radius:12px;padding:7px 12px;font:inherit;font-size:.8rem;cursor:pointer;
+  border-radius:12px;padding:7px 12px;font:inherit;font-size:.78rem;cursor:pointer;
+  transition:background .2s, transform .15s;
 }
+body.dark .tools button{background:rgba(255,255,255,.08)}
+.tools button:hover{transform:translateY(-1px)}
+.tools button[aria-pressed=true]{background:var(--ac);color:#fff;border-color:transparent}
 main{max-width:1080px;margin:0 auto;padding:0 12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.card{border-radius:22px;padding:16px;position:relative;overflow:hidden}
+.card{border-radius:22px;padding:16px;position:relative;overflow:hidden;transition:transform .2s, box-shadow .2s}
+.card:hover{transform:translateY(-2px)}
 .card::after{
   content:"3INA3";position:absolute;bottom:6px;left:10px;font-size:.55rem;
   font-weight:800;opacity:.18;letter-spacing:.12em;pointer-events:none;
 }
-.w{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.en{direction:ltr;font-weight:700;font-size:1.12rem;unicode-bidi:isolate}
-.fa{margin:6px 0;color:var(--ac);font-weight:600}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(10,132,255,.6); }
+  70% { box-shadow: 0 0 0 20px rgba(10,132,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(10,132,255,0); }
+}
+.card.pulse { animation: pulse 1.6s; }
+.w{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.w .txt{flex:1;min-width:0}
+.en{direction:ltr;font-weight:700;font-size:1.12rem;unicode-bidi:isolate;word-break:break-word}
+.fa{margin:6px 0;color:var(--ac);font-weight:600;transition:filter .25s}
 .ex{
   direction:ltr;text-align:left;display:flex;align-items:flex-start;gap:8px;
   margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.22);
   font-size:.9rem;line-height:1.5;
 }
+body.dark .ex{background:rgba(255,255,255,.06)}
 .sp{
   flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--gb);
   background:rgba(255,255,255,.4);color:var(--ac);display:grid;place-items:center;
-  cursor:pointer;box-shadow:inset 0 1px 0 #fff;transition:transform .15s,background .2s;
+  cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+  transition:transform .15s,background .2s;
 }
+body.dark .sp{background:rgba(255,255,255,.1)}
 .sp.s{width:30px;height:30px}
 .sp:active{transform:scale(.88)}
 .sp.on{background:var(--ac);color:#fff}
 .sp svg{width:16px;height:16px}
-.tr{margin-top:6px;padding:0 4px;color:var(--mut);font-size:.85rem;line-height:1.65}
-.u{font-size:.7rem;color:var(--mut)}
+.star{
+  flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--gb);
+  background:transparent;color:var(--mut);display:grid;place-items:center;
+  cursor:pointer;transition:transform .15s,color .2s,background .2s;
+}
+.star svg{width:16px;height:16px}
+.star.on{color:var(--star);background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.4)}
+.star:active{transform:scale(.85)}
+.tr{margin-top:6px;padding:0 4px;color:var(--mut);font-size:.85rem;line-height:1.65;transition:filter .25s}
+.u{font-size:.7rem;color:var(--mut);margin-top:2px}
 .cnt{text-align:center;color:var(--mut);margin:8px 0 12px;font-size:.84rem}
+.empty{
+  grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--mut);
+}
+.empty .icon{font-size:3.5rem;margin-bottom:14px}
+.empty p{margin:6px 0}
+
+/* Study mode */
+body.study .fa:not(.revealed),
+body.study .tr:not(.revealed){
+  filter:blur(8px);
+  cursor:pointer;
+  user-select:none;
+  -webkit-user-select:none;
+}
+body.study .fa:not(.revealed)::after,
+body.study .tr:not(.revealed)::after{
+  content:" 👁";
+  filter:blur(0);
+  opacity:.6;
+}
+
+/* ===== Flashcard Mode ===== */
+#flash-panel{
+  display:none;
+  max-width:640px;
+  margin:0 auto 40px;
+  padding:0 12px;
+}
+body.flash #flash-panel{display:block}
+body.flash main,
+body.flash .cnt,
+body.flash #chips,
+body.flash input#q{display:none !important}
+body.flash .tools #study,
+body.flash .tools #favOnly,
+body.flash .tools #random,
+body.flash .tools #print{display:none}
+
+.flash-header{
+  text-align:center;
+  margin-bottom:18px;
+  color:var(--mut);
+  font-size:.9rem;
+}
+.flash-progress{
+  height:6px;
+  background:rgba(255,255,255,.25);
+  border-radius:99px;
+  overflow:hidden;
+  margin:10px 0 6px;
+}
+body.dark .flash-progress{background:rgba(255,255,255,.1)}
+.flash-progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--ac),var(--ac2));
+  border-radius:99px;
+  transition:width .35s ease;
+}
+.flash-counter{font-size:.85rem;opacity:.9}
+
+.flash-stage{
+  perspective:1200px;
+  margin:0 auto 22px;
+  max-width:520px;
+}
+.flash-card{
+  position:relative;
+  width:100%;
+  min-height:320px;
+  transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.4,.2,.2,1);
+  cursor:pointer;
+}
+.flash-card.flipped{transform:rotateY(180deg)}
+.flash-face{
+  position:absolute;inset:0;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  border-radius:28px;
+  padding:28px 24px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  box-shadow:0 18px 40px rgba(20,33,61,.18);
+}
+.flash-front{transform:rotateY(0deg)}
+.flash-back{transform:rotateY(180deg)}
+.flash-en{
+  direction:ltr;
+  font-size:clamp(1.6rem,5vw,2.4rem);
+  font-weight:800;
+  line-height:1.25;
+  margin-bottom:12px;
+  unicode-bidi:isolate;
+}
+.flash-unit{
+  font-size:.78rem;
+  color:var(--mut);
+  background:rgba(255,255,255,.25);
+  padding:4px 12px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+body.dark .flash-unit{background:rgba(255,255,255,.08)}
+.flash-hint{
+  font-size:.75rem;
+  color:var(--mut);
+  opacity:.7;
+  margin-top:auto;
+}
+.flash-fa{
+  font-size:clamp(1.3rem,4vw,1.9rem);
+  font-weight:700;
+  color:var(--ac);
+  margin-bottom:16px;
+  line-height:1.4;
+}
+.flash-ex{
+  direction:ltr;
+  text-align:left;
+  width:100%;
+  padding:14px 16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.22);
+  font-size:.95rem;
+  line-height:1.55;
+  margin-bottom:10px;
+}
+body.dark .flash-ex{background:rgba(255,255,255,.07)}
+.flash-tr{
+  width:100%;
+  text-align:right;
+  color:var(--mut);
+  font-size:.9rem;
+  line-height:1.6;
+  margin-bottom:14px;
+}
+.flash-actions-top{
+  display:flex;gap:10px;justify-content:center;margin-bottom:8px;
+}
+
+.flash-controls{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;
+  margin-bottom:16px;
+}
+.flash-controls button{
+  border:1px solid var(--gb);
+  background:rgba(255,255,255,.32);
+  color:var(--ink);
+  border-radius:14px;
+  padding:10px 16px;
+  font:inherit;font-size:.85rem;
+  cursor:pointer;
+  transition:background .2s,transform .15s;
+  min-width:44px;
+}
+body.dark .flash-controls button{background:rgba(255,255,255,.09)}
+.flash-controls button:hover{transform:translateY(-1px)}
+.flash-controls button:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.flash-controls .btn-know{
+  background:rgba(34,197,94,.18);
+  border-color:rgba(34,197,94,.35);
+  color:var(--success);
+  font-weight:600;
+}
+.flash-controls .btn-again{
+  background:rgba(239,68,68,.15);
+  border-color:rgba(239,68,68,.3);
+  color:var(--danger);
+  font-weight:600;
+}
+.flash-controls .btn-primary{
+  background:var(--ac);
+  color:#fff;
+  border-color:transparent;
+  font-weight:600;
+  padding:10px 22px;
+}
+
+.flash-stats{
+  text-align:center;
+  font-size:.8rem;
+  color:var(--mut);
+  margin-top:8px;
+}
+.flash-stats span{margin:0 6px}
+
 .footer-copy{
   max-width:1080px;margin:30px auto 10px;padding:16px;text-align:center;
   font-size:.72rem;color:var(--mut);line-height:1.7;border-radius:18px;
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Print */
+@media print {
+  .bg,.wm-layer,header,.tools,.chips,.copy-banner,.footer-copy,.sp,.star,.cnt,#flash-panel{display:none!important}
+  body{background:#fff!important;color:#000!important;padding:0}
+  main{display:block;padding:0}
+  .card{page-break-inside:avoid;border:1px solid #ccc;margin-bottom:12px;background:#fff!important;
+    backdrop-filter:none!important;box-shadow:none!important;border-radius:8px}
+  .card::after{display:none}
+}
 </style>
 </head>
 <body>
 <div class="bg"><i></i><i></i><i></i></div>
 <div class="wm-layer" id="wm" aria-hidden="true"></div>
 
-<!-- HEAVY COPYRIGHT BANNER + DIGITAL DOCUMENT ID -->
 <section class="copy-banner glass">
   <h2>© ۱۴۰۵ / ۲۰۲۶ · سینا شجاعیان (3INA3)</h2>
   <p>
@@ -167,19 +388,80 @@ main{max-width:1080px;margin:0 auto;padding:0 12px;display:grid;grid-template-co
 
 <header class="glass">
   <h1>
-    لغات مهم Oxford English for IT
+    لغات تخصصی فناوری اطلاعات — ۲۰ واحد
     <span class="brand">· by Sina Shojaeian (3INA3)</span>
   </h1>
-  <p class="sub">واحدهای ۱ تا ۸ + واژه‌های کلیدی · روی بلندگو بزنید تا تلفظ را بشنوید · © 3INA3</p>
-  <input id="q" type="search" placeholder="جستجوی لغت یا معنی…" aria-label="جستجو">
+  <p class="sub">Oxford English for IT + شبکه، امنیت، برنامه‌نویسی، دیتابیس، وب، هوش مصنوعی، ابر، موبایل، IoT، بلاکچین، دواپس، داده · © 3INA3</p>
+  <input id="q" type="search" placeholder="جستجوی لغت یا معنی… (کلید / برای تمرکز)" aria-label="جستجو">
   <div class="chips" id="chips"></div>
   <div class="tools">
-    <button id="theme" type="button">حالت روز / شب</button>
+    <button id="theme" type="button">🌙 حالت شب</button>
+    <button id="study" type="button" aria-pressed="false">📖 حالت مطالعه</button>
+    <button id="favOnly" type="button" aria-pressed="false">⭐ علاقه‌مندی‌ها</button>
+    <button id="flash" type="button" aria-pressed="false">🃏 فلش‌کارت</button>
+    <button id="random" type="button">🎲 لغت تصادفی</button>
+    <button id="print" type="button">🖨 چاپ</button>
   </div>
 </header>
 
 <div class="cnt" id="cnt"></div>
 <main id="list"></main>
+
+<!-- ===== Flashcard Panel ===== -->
+<div id="flash-panel">
+  <div class="flash-header glass" style="padding:14px 18px;border-radius:18px;">
+    <div class="flash-counter" id="flash-counter">۱ از ۱</div>
+    <div class="flash-progress"><div class="flash-progress-bar" id="flash-bar" style="width:0%"></div></div>
+    <div style="font-size:.78rem;margin-top:4px" id="flash-deck-info">همه لغات</div>
+  </div>
+
+  <div class="flash-stage">
+    <div class="flash-card glass" id="flash-card" role="button" tabindex="0" aria-label="کلیک برای ورق زدن">
+      <!-- Front -->
+      <div class="flash-face flash-front">
+        <div class="flash-unit" id="fc-unit"></div>
+        <div class="flash-en" id="fc-en"></div>
+        <div class="flash-actions-top">
+          <button class="sp" id="fc-say-en" aria-label="تلفظ واژه" title="تلفظ">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </button>
+          <button class="star" id="fc-star" aria-label="علاقه‌مندی">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>
+          </button>
+        </div>
+        <div class="flash-hint">برای دیدن معنی کلیک کنید یا Space بزنید</div>
+      </div>
+      <!-- Back -->
+      <div class="flash-face flash-back">
+        <div class="flash-fa" id="fc-fa"></div>
+        <div class="flash-ex" id="fc-ex"></div>
+        <div class="flash-tr" id="fc-tr"></div>
+        <div class="flash-actions-top">
+          <button class="sp" id="fc-say-ex" aria-label="تلفظ جمله">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </button>
+        </div>
+        <div class="flash-hint">دوباره کلیک کنید تا برگردید</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flash-controls">
+    <button id="fc-prev" title="قبلی (←)">◀ قبلی</button>
+    <button id="fc-flip" class="btn-primary" title="ورق زدن (Space)">↻ ورق زدن</button>
+    <button id="fc-next" title="بعدی (→)">بعدی ▶</button>
+  </div>
+  <div class="flash-controls">
+    <button id="fc-again" class="btn-again" title="هنوز یاد نگرفتم">🔄 هنوز یاد نگرفتم</button>
+    <button id="fc-know" class="btn-know" title="بلدم">✅ بلدم</button>
+    <button id="fc-shuffle" title="درهم‌ریختن">🔀 درهم</button>
+  </div>
+  <div class="flash-stats" id="flash-stats">
+    <span id="fc-known-count">۰ بلدم</span>
+    <span>·</span>
+    <span id="fc-remaining">۰ باقی‌مانده</span>
+  </div>
+</div>
 
 <footer class="footer-copy glass">
   <strong>© 2026 Sina Shojaeian (3INA3) — All Rights Reserved</strong><br>
@@ -190,7 +472,7 @@ main{max-width:1080px;margin:0 auto;padding:0 12px;display:grid;grid-template-co
 </footer>
 
 <script>
-/* 3D watermark */
+/* ===== 3D watermark ===== */
 const wm = document.getElementById("wm");
 const names = ["3INA3","SINA","سینا","Sina Shojaeian","3INA3","SINA"];
 for(let i=0;i<24;i++){
@@ -199,16 +481,23 @@ for(let i=0;i<24;i++){
   wm.appendChild(s);
 }
 
-/* Theme toggle */
-document.getElementById("theme").onclick = ()=>{
-  document.body.classList.toggle("dark");
-  document.body.classList.toggle("light");
-  if(!document.body.classList.contains("dark") && !document.body.classList.contains("light")){
-    document.body.classList.add("dark");
-  }
+/* ===== Theme (persistent + system default) ===== */
+const themeBtn = document.getElementById("theme");
+function applyTheme(mode){
+  document.body.classList.remove("dark","light");
+  document.body.classList.add(mode);
+  themeBtn.textContent = mode === "dark" ? "☀️ حالت روز" : "🌙 حالت شب";
+  localStorage.setItem("itvocab_theme", mode);
+}
+const savedTheme = localStorage.getItem("itvocab_theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+if (savedTheme) applyTheme(savedTheme);
+else applyTheme(prefersDark ? "dark" : "light");
+themeBtn.onclick = () => {
+  applyTheme(document.body.classList.contains("dark") ? "light" : "dark");
 };
 
-/* ========== DATA ========== */
+/* ===== Unit names ===== */
 const U = {
   1:"واحد ۱ · کاربران رایانه",
   2:"واحد ۲ · معماری رایانه",
@@ -217,393 +506,480 @@ const U = {
   5:"واحد ۵ · افعال up",
   6:"واحد ۶ · سیستم‌عامل",
   7:"واحد ۷ · رابط گرافیکی",
-  8:"واحد ۸ · نرم‌افزارهای کاربردی"
+  8:"واحد ۸ · نرم‌افزارهای کاربردی",
+  9:"واحد ۹ · شبکه و اینترنت",
+  10:"واحد ۱۰ · امنیت سایبری",
+  11:"واحد ۱۱ · برنامه‌نویسی",
+  12:"واحد ۱۲ · پایگاه داده",
+  13:"واحد ۱۳ · توسعه وب",
+  14:"واحد ۱۴ · هوش مصنوعی و یادگیری ماشین",
+  15:"واحد ۱۵ · رایانش ابری",
+  16:"واحد ۱۶ · موبایل و اپلیکیشن",
+  17:"واحد ۱۷ · اینترنت اشیا",
+  18:"واحد ۱۸ · بلاکچین و رمزارز",
+  19:"واحد ۱۹ · دواپس و زیرساخت",
+  20:"واحد ۲۰ · علم داده و کلان‌داده"
+};
+const SHORT = {
+  1:"کاربران",2:"معماری",3:"کاربردها",4:"جانبی",5:"افعال up",
+  6:"سیستم‌عامل",7:"رابط",8:"نرم‌افزار",9:"شبکه",10:"امنیت",
+  11:"برنامه‌نویسی",12:"دیتابیس",13:"وب",14:"هوش مصنوعی",15:"ابر",
+  16:"موبایل",17:"IoT",18:"بلاکچین",19:"دواپس",20:"داده"
 };
 
-const D = `
-1|scan|اسکن کردن|I scanned about a third of the photographs.
-1|clipart|تصاویر آماده|Louise uses clipart in her drawings.
-1|download|دانلود کردن|Have you ever downloaded music from the Internet?
-1|search engine|موتور جستجو|Which search engine did you use?
-1|expansion card|کارت توسعه|He fitted an expansion card last week.
-1|virus|ویروس|My computer has a virus.
-1|smart card|کارت هوشمند|A smart card stores health records and bank balances.
-1|expert system|سیستم خبره|An expert system helps doctors find a patient's illness.
-1|multimedia|چندرسانه‌ای|Multimedia combines text with sound, video and animation.
-1|edutainment|آموزش سرگرم‌کننده|Edutainment is both educational and entertaining.
-1|telecommute|دورکاری کردن|Many people telecommute from home.
-1|videoconferencing|ویدیوکنفرانس|Videoconferencing connects people in remote locations.
-1|connectivity|قابلیت اتصال|Connectivity lets incompatible systems share resources.
-1|handheld computer|رایانه دستی|Workers use a handheld computer at the customer site.
-1|information superhighway|بزرگراه اطلاعات|The information superhighway will give free access to resources.
-1|hardware|سخت‌افزار|The hardware needs software to make it work.
-1|software|نرم‌افزار|Applications software helps users write documents.
-1|network|شبکه|A network lets computers share resources.
-1|distance learning|آموزش از راه دور|Distance learning is possible with an electronic classroom.
-1|inventory|موجودی انبار|Workers use handhelds to control inventory.
-1|supervision|نظارت|Many machines once required human supervision.
-1|smart house|خانه هوشمند|A smart house can turn lights on and off.
-1|present perfect|حال کامل|I've added a sound track.
-1|past simple|گذشته ساده|I made one for Mary's birthday last week.
-2|processor|پردازنده|The processor runs at three gigahertz.
-2|clock speed|سرعت کلاک|A higher clock speed makes the PC faster.
-2|front-side bus (FSB)|گذرگاه جلویی|The front-side bus operates at 800 MHz.
-2|SDRAM|حافظه پویای همزمان|This PC has 1 GB of SDRAM.
-2|hard drive|هارد دیسک|A 200 GB hard drive stores all my files.
-2|chassis|شاسی / قاب|A mini-tower chassis contains the computer system.
-2|resolution|وضوح تصویر|The monitor has a resolution of 1024 x 768.
-2|TFT monitor|نمایشگر TFT|A 19-inch TFT flat panel monitor saves desk space.
-2|motherboard|مادربرد|You can upgrade your PC by adding a new motherboard.
-2|bus|گذرگاه|Data is transferred along the data bus.
-2|cache memory|حافظه نهان|Cache memory is faster than main memory.
-2|cache hit|اصابت به حافظه نهان|A cache hit means the data is already in the cache.
-2|cache controller|کنترل‌کننده حافظه نهان|The cache controller manages the whole caching process.
-2|cache coherency|هماهنگی حافظه نهان|Cache coherency keeps cache and main memory consistent.
-2|write-through cache|کش نوشتن مستقیم|A write-through cache is the safest but slowest solution.
-2|write-back cache|کش نوشتن با تأخیر|A write-back cache needs a more intelligent controller.
-2|bottleneck|گلوگاه|Memory speed is often the bottleneck in a PC.
-2|buffer|بافر / میانگیر|The cache works as a buffer between memory and processor.
-2|peripheral|دستگاه جانبی|A printer is a peripheral linked to the computer.
-2|UPS|منبع تغذیه اضطراری|A UPS protects the computer from power failure.
-2|shut down|خاموش کردن|Shut down your computer before opening it.
-2|unplug|از برق کشیدن|Unplug all the cables except the power cord.
-2|CPU|واحد پردازش مرکزی|The CPU is the brain of the computer.
-2|RAM|حافظه تصادفی|Data moves between the CPU and RAM.
-2|ROM|حافظه فقط‌خواندنی|Data flows from ROM to the CPU.
-2|gigabyte|گیگابایت|The hard drive has 200 gigabytes of storage.
-2|megahertz|مگاهرتز|The bus operates at 800 megahertz.
-2|graphics card|کارت گرافیک|A graphics card drives the display.
-2|optical drive|درایو نوری|A DVD drive is an optical drive.
-2|track|شیار|Tracks are divided into sectors.
-2|sector|قطاع|Each track is divided into sectors.
-3|radar|رادار|The radar sends out a beam of radio waves.
-3|microprocessor|ریزپردازنده|The microprocessor calculates the speed of each vehicle.
-3|OCR|تشخیص نوری حروف|OCR software reads the number plates.
-3|database|پایگاه داده|The owner is traced using the vehicle database.
-3|mailmerge|ادغام نامه|A standard letter is printed using mailmerge.
-3|barcode|بارکد|The scanner reads the barcode on the item.
-3|EPOS till|صندوق فروش الکترونیکی|The EPOS till prints the item and price on the receipt.
-3|data link|پیوند داده|A data link connects the two cameras.
-3|data mining|داده‌کاوی|Data mining filters large amounts of raw data.
-3|artificial intelligence|هوش مصنوعی|Artificial intelligence tries to work like the human brain.
-3|neural network|شبکه عصبی|A neural network compares data until patterns appear.
-3|cluster|خوشه|Clustering divides data into similar groups.
-3|decision tree|درخت تصمیم|A decision tree separates data into subsets.
-3|data warehouse|انبار داده|A data warehouse archives huge amounts of data.
-3|cleanse data|پاک‌سازی داده|You should cleanse data to remove duplicates and errors.
-3|speed trap|دوربین کنترل سرعت|Police installed a speed trap on the road.
-3|wavelength|طول موج|The reflected signal has a smaller wavelength.
-3|frequency|بسامد|The radar uses a frequency of 24 gigahertz.
-3|registration number|شماره پلاک|The registration number is read by OCR.
-3|receipt|رسید|The till prints a paper receipt.
-3|stock file|فایل موجودی|The computer searches the stock file.
-3|present passive|مجهول حال|The information is stored on a smart card.
-4|input device|دستگاه ورودی|A keyboard is an input device.
-4|output device|دستگاه خروجی|A printer is an output device.
-4|CCD|حسگر CCD|A lens focuses the image on to the CCD.
-4|pixel|پیکسل|A pixel is a tiny dot of an image.
-4|viewfinder|منظره‌یاب|Use the viewfinder to aim the camera accurately.
-4|LCD screen|صفحه LCD|You can play back images on the LCD screen.
-4|memory card|کارت حافظه|Digital cameras store images on a memory card.
-4|rechargeable battery|باتری قابل شارژ|A rechargeable battery saves money.
-4|conventional|معمولی / سنتی|A conventional camera uses film.
-4|ink-jet printer|چاپگر جوهرافشان|An ink-jet printer is cheap and gives good colour.
-4|laser printer|چاپگر لیزری|A laser printer gives excellent text quality.
-4|removable hard disk|هارد دیسک قابل جابجایی|A removable hard disk is easy to carry.
-4|magnetic tape|نوار مغناطیسی|Magnetic tape is used to back up large quantities of data.
-4|flash drive|فلش درایو|You can read from and write to a flash drive.
-4|capacity|ظرفیت|DVDs have a higher capacity than CDs.
-4|areal density|چگالی سطحی|Areal density doubled every 18 months in the 1990s.
-4|holographic storage|ذخیره‌سازی هولوگرافیک|Holographic storage is three-dimensional.
-4|scanner|اسکنر|A scanner inputs printed graphics.
-4|microphone|میکروفون|A microphone records sound.
-4|touch screen|صفحه لمسی|A touch screen is used in public terminals.
-4|joystick|دسته بازی|Use a joystick in a fast action game.
-4|plotter|پلاتر|A plotter prints building plan drawings.
-4|headphones|هدفون|Headphones let you listen without disturbing others.
-4|keyboard|صفحه‌کلید|Use a keyboard to input a lot of text.
-5|back up|پشتیبان‌گیری کردن|You should back up your files regularly.
-5|upgrade|ارتقا دادن|You can upgrade your PC with a new motherboard.
-5|free up|آزاد کردن|Delete some files to free up space.
-5|upload|بارگذاری کردن|Data is uploaded to the mainframe each night.
-5|start up|راه‌اندازی کردن|The system boots when you start up your computer.
-5|update|به‌روزرسانی کردن|Update your software to fix bugs.
-5|build up|ساختن / افزایش دادن|She is taking a course to build up her knowledge.
-5|set up|راه‌اندازی / تنظیم کردن|He set up a website for his travel company.
-5|keep up|همگام ماندن|Read PC magazines to keep up with developments.
-5|catch up|جبران عقب‌ماندگی|Study the hand-outs to catch up.
-6|operating system|سیستم‌عامل|An operating system lies between software and hardware.
-6|kernel|هسته|The kernel handles memory allocation.
-6|source code|کد منبع|Without the source code you can't fix bugs.
-6|supervisor program|برنامه ناظر|The supervisor program controls the entire operating system.
-6|resident program|برنامه مقیم|A resident program stays in memory.
-6|non-resident program|برنامه غیرمقیم|Non-resident programs load only when needed.
-6|command line|خط فرمان|Linux offers a command line and a GUI.
-6|open source|متن‌باز|Open source means anyone can contribute.
-6|distribution|توزیع (لینوکس)|A distribution is a complete operating system kit.
-6|multitasking|چندوظیفگی|Pre-emptive multitasking runs several programs at once.
-6|log on|وارد شدن|He can't get used to logging on with a password.
-6|password|گذرواژه|Enter your login password.
-6|directory|پوشه / دایرکتوری|The ls command lists all files in a directory.
-6|freeware|نرم‌افزار رایگان|Some operating systems are distributed as freeware.
-6|Unix|یونیکس|Unix was the wonder operating system of the 1970s.
-6|Linux|لینوکس|Linux began as a student project.
-6|user interface|رابط کاربری|The OS establishes a user interface.
-6|memory allocation|تخصیص حافظه|The kernel handles memory allocation.
-6|bug|باگ / اشکال نرم‌افزاری|Programmers fix bugs in the code.
-7|GUI|رابط گرافیکی|A GUI lets you point to icons and click.
-7|window|پنجره|Each program opens in its own window.
-7|icon|آیکون|Double-click the icon to start the program.
-7|menu|منو|Choose Shut Down from the menu.
-7|submenu|زیرمنو|A submenu opens when you point to an option.
-7|taskbar|نوار وظیفه|The taskbar shows the programs that are running.
-7|system tray|ناحیه اعلان|The clock is in the system tray.
-7|desktop|دسکتاپ|Icons are arranged on the desktop.
-7|button|دکمه|Click the Start button.
-7|scrollbar|نوار پیمایش|Use the scrollbar to see more of the window.
-7|Recycle Bin|سطل بازیافت|Deleted files go to the Recycle Bin.
-7|dock|داک|The Dock gives you instant access to your applications.
-7|folder|پوشه|Double-click a folder to display its contents.
-7|drag and drop|کشیدن و رها کردن|Drag and drop the file into the folder.
-7|tooltip|راهنمای شناور|A tooltip appears when you hover over a button.
-7|right-click|کلیک راست|Right-click the file, then choose Cut.
-7|speech recognition|تشخیص گفتار|Speech recognition will change interface design.
-7|multimodal interface|رابط چندحالته|A multimodal interface combines several kinds of input.
-7|intelligent agent|عامل هوشمند|An intelligent agent automates repetitive tasks.
-7|text to speech (TTS)|تبدیل متن به گفتار|TTS lets the computer read text aloud.
-7|enable|قادر ساختن|Voice software enables disabled users to access computers.
-7|cursor|نشانگر|Move the cursor to the icon.
-7|shortcut menu|منوی میان‌بر|Click Cut on the shortcut menu.
-7|clipboard|کلیپ‌بورد|Copy the image to the Clipboard.
-7|hover|نگه داشتن نشانگر|Hover over the button to see a tooltip.
-7|select|انتخاب کردن|Select the file you want to move.
-7|handwriting recognition|تشخیص دست‌خط|PCs will have handwriting recognition.
-8|spreadsheet|صفحه‌گسترده|A spreadsheet calculates salaries automatically.
-8|word processor|واژه‌پرداز|I wrote the report in a word processor.
-8|DTP|نشر رومیزی|DTP software is used to produce a newsletter.
-8|PIM|مدیر اطلاعات شخصی|A PIM stores contacts and appointments.
-8|file server|سرور فایل|The file server is in Reception.
-8|LAN|شبکه محلی|The medical centre uses a local area network.
-8|payroll|حقوق و دستمزد|A payroll package calculates salaries.
-8|search criteria|معیارهای جستجو|Enter the search criteria, then click Find.
-8|tab|زبانه|Click on the Address tab.
-8|application service provider|ارائه‌دهنده سرویس نرم‌افزار|You rent applications from an application service provider.
-8|bandwidth|پهنای باند|Remote applications require a lot of bandwidth.
-8|broadband|پهن‌باند|A broadband connection is fast.
-8|office suite|مجموعه آفیس|An office suite includes a word processor and spreadsheet.
-8|outsource|برون‌سپاری کردن|Many firms outsource their email services.
-8|e-commerce|تجارت الکترونیک|E-commerce businesses need huge storage.
-8|data centre|مرکز داده|ASPs lease space from a data centre.
-8|autocorrect|تصحیح خودکار|You can disable the autocorrect.
-8|presentation program|برنامه ارائه|A salesperson uses a presentation program.
-8|email|ایمیل|Reception staff send email to patients.
-8|website editor|ویرایشگر وب‌سایت|A website editor helps build a company site.
-8|developer tools|ابزارهای توسعه|Programmers need developer tools.
-8|appointment|وقت ملاقات|Reception enter each appointment on the system.
-8|diagnosis|تشخیص بیماری|The doctor enters the diagnosis and treatment.
-8|prescribe|تجویز کردن|The system helps doctors prescribe drugs.
-8|flexibility|انعطاف‌پذیری|An ASP gives you more flexibility.
-8|reliable|قابل اعتماد|The service must be secure and reliable.
-8|secure|امن|Choose a secure service for your data.
-8|ASP|ارائه‌دهنده سرویس نرم‌افزار|An ASP provides remote access to software.
-`.trim().split("\n").map(l=>{
-  const [u,e,f,x] = l.split("|");
-  return {u:+u,e,f,x};
+/* ===== DATA (unit|en|fa|example_en|example_fa) ===== */
+const RAW = `
+1|scan|اسکن کردن|I scanned about a third of the photographs.|من حدود یک سوم عکس‌ها را اسکن کردم.
+1|clipart|تصاویر آماده|Louise uses clipart in her drawings.|لوئیز در نقاشی‌هایش از تصاویر آماده استفاده می‌کند.
+1|download|دانلود کردن|Have you ever downloaded music from the Internet?|آیا تا حالا موسیقی از اینترنت دانلود کرده‌ای؟
+1|search engine|موتور جستجو|Which search engine did you use?|از کدام موتور جستجو استفاده کردی؟
+1|expansion card|کارت توسعه|He fitted an expansion card last week.|او هفته‌ی گذشته یک کارت توسعه نصب کرد.
+1|virus|ویروس|My computer has a virus.|رایانه‌ی من ویروس دارد.
+1|smart card|کارت هوشمند|A smart card stores health records and bank balances.|کارت هوشمند سوابق پزشکی و موجودی بانکی را ذخیره می‌کند.
+1|expert system|سیستم خبره|An expert system helps doctors find a patient's illness.|سیستم خبره به پزشکان کمک می‌کند بیماری بیمار را تشخیص دهند.
+1|multimedia|چندرسانه‌ای|Multimedia combines text with sound, video and animation.|چندرسانه‌ای متن را با صدا، ویدیو و انیمیشن ترکیب می‌کند.
+1|edutainment|آموزش سرگرم‌کننده|Edutainment is both educational and entertaining.|آموزش سرگرم‌کننده هم آموزشی است و هم سرگرم‌کننده.
+1|telecommute|دورکاری کردن|Many people telecommute from home.|بسیاری از مردم از خانه دورکاری می‌کنند.
+1|videoconferencing|ویدیوکنفرانس|Videoconferencing connects people in remote locations.|ویدیوکنفرانس افراد را در مکان‌های دور به هم وصل می‌کند.
+1|connectivity|قابلیت اتصال|Connectivity lets incompatible systems share resources.|قابلیت اتصال به سیستم‌های ناسازگار اجازه‌ی اشتراک منابع می‌دهد.
+1|handheld computer|رایانه دستی|Workers use a handheld computer at the customer site.|کارکنان در محل مشتری از رایانه‌ی دستی استفاده می‌کنند.
+1|information superhighway|بزرگراه اطلاعات|The information superhighway will give free access to resources.|بزرگراه اطلاعات دسترسی رایگان به منابع را فراهم می‌کند.
+1|hardware|سخت‌افزار|The hardware needs software to make it work.|سخت‌افزار برای کار کردن به نرم‌افزار نیاز دارد.
+1|software|نرم‌افزار|Applications software helps users write documents.|نرم‌افزار کاربردی به کاربران در نوشتن اسناد کمک می‌کند.
+1|network|شبکه|A network lets computers share resources.|شبکه به رایانه‌ها اجازه‌ی اشتراک منابع می‌دهد.
+1|distance learning|آموزش از راه دور|Distance learning is possible with an electronic classroom.|آموزش از راه دور با کلاس الکترونیکی ممکن است.
+1|inventory|موجودی انبار|Workers use handhelds to control inventory.|کارکنان با رایانه‌ی دستی موجودی را کنترل می‌کنند.
+1|supervision|نظارت|Many machines once required human supervision.|بسیاری از ماشین‌ها زمانی به نظارت انسان نیاز داشتند.
+1|smart house|خانه هوشمند|A smart house can turn lights on and off.|خانه‌ی هوشمند می‌تواند چراغ‌ها را روشن و خاموش کند.
+1|present perfect|حال کامل|I've added a sound track.|من یک ترک صوتی اضافه کرده‌ام.
+1|past simple|گذشته ساده|I made one for Mary's birthday last week.|من هفته‌ی پیش یکی برای تولد مری ساختم.
+2|processor|پردازنده|The processor runs at three gigahertz.|پردازنده با سرعت سه گیگاهرتز کار می‌کند.
+2|clock speed|سرعت کلاک|A higher clock speed makes the PC faster.|سرعت کلاک بالاتر رایانه را سریع‌تر می‌کند.
+2|front-side bus (FSB)|گذرگاه جلویی|The front-side bus operates at 800 MHz.|گذرگاه جلویی با سرعت ۸۰۰ مگاهرتز کار می‌کند.
+2|SDRAM|حافظه پویای همزمان|This PC has 1 GB of SDRAM.|این رایانه ۱ گیگابایت SDRAM دارد.
+2|hard drive|هارد دیسک|A 200 GB hard drive stores all my files.|یک هارد ۲۰۰ گیگابایتی تمام فایل‌های من را ذخیره می‌کند.
+2|chassis|شاسی / قاب|A mini-tower chassis contains the computer system.|یک شاسی مینی‌تاور سیستم رایانه را در بر می‌گیرد.
+2|resolution|وضوح تصویر|The monitor has a resolution of 1024 x 768.|وضوح نمایشگر ۱۰۲۴ در ۷۶۸ است.
+2|TFT monitor|نمایشگر TFT|A 19-inch TFT flat panel monitor saves desk space.|نمایشگر تخت ۱۹ اینچی TFT در فضای میز صرفه‌جویی می‌کند.
+2|motherboard|مادربرد|You can upgrade your PC by adding a new motherboard.|با افزودن مادربرد جدید می‌توانی رایانه‌ات را ارتقا دهی.
+2|bus|گذرگاه|Data is transferred along the data bus.|داده‌ها در طول گذرگاه داده منتقل می‌شوند.
+2|cache memory|حافظه نهان|Cache memory is faster than main memory.|حافظه‌ی نهان از حافظه‌ی اصلی سریع‌تر است.
+2|cache hit|اصابت به حافظه نهان|A cache hit means the data is already in the cache.|اصابت به کش یعنی داده از قبل در کش بوده است.
+2|cache controller|کنترل‌کننده حافظه نهان|The cache controller manages the whole caching process.|کنترل‌کننده‌ی کش کل فرایند کش‌کردن را مدیریت می‌کند.
+2|cache coherency|هماهنگی حافظه نهان|Cache coherency keeps cache and main memory consistent.|هماهنگی کش، کش و حافظه‌ی اصلی را سازگار نگه می‌دارد.
+2|write-through cache|کش نوشتن مستقیم|A write-through cache is the safest but slowest solution.|کش نوشتن مستقیم امن‌ترین اما کندترین راه‌حل است.
+2|write-back cache|کش نوشتن با تأخیر|A write-back cache needs a more intelligent controller.|کش نوشتن با تأخیر به کنترل‌کننده‌ی هوشمندتری نیاز دارد.
+2|bottleneck|گلوگاه|Memory speed is often the bottleneck in a PC.|سرعت حافظه اغلب گلوگاه رایانه است.
+2|buffer|بافر / میانگیر|The cache works as a buffer between memory and processor.|کش مانند بافری میان حافظه و پردازنده عمل می‌کند.
+2|peripheral|دستگاه جانبی|A printer is a peripheral linked to the computer.|چاپگر دستگاه جانبی است که به رایانه متصل شده است.
+2|UPS|منبع تغذیه اضطراری|A UPS protects the computer from power failure.|یو‌پی‌اس رایانه را از قطع برق محافظت می‌کند.
+2|shut down|خاموش کردن|Shut down your computer before opening it.|قبل از باز کردن رایانه آن را خاموش کنید.
+2|unplug|از برق کشیدن|Unplug all the cables except the power cord.|همه‌ی کابل‌ها به جز کابل برق را از برق بکشید.
+2|CPU|واحد پردازش مرکزی|The CPU is the brain of the computer.|CPU مغز رایانه است.
+2|RAM|حافظه تصادفی|Data moves between the CPU and RAM.|داده بین CPU و RAM جابه‌جا می‌شود.
+2|ROM|حافظه فقط‌خواندنی|Data flows from ROM to the CPU.|داده از ROM به CPU جریان می‌یابد.
+2|gigabyte|گیگابایت|The hard drive has 200 gigabytes of storage.|هارد ۲۰۰ گیگابایت فضای ذخیره‌سازی دارد.
+2|megahertz|مگاهرتز|The bus operates at 800 megahertz.|گذرگاه با ۸۰۰ مگاهرتز کار می‌کند.
+2|graphics card|کارت گرافیک|A graphics card drives the display.|کارت گرافیک نمایشگر را راه می‌برد.
+2|optical drive|درایو نوری|A DVD drive is an optical drive.|درایو DVD یک درایو نوری است.
+2|track|شیار|Tracks are divided into sectors.|شیارها به قطاع‌ها تقسیم می‌شوند.
+2|sector|قطاع|Each track is divided into sectors.|هر شیار به قطاع‌ها تقسیم می‌شود.
+3|radar|رادار|The radar sends out a beam of radio waves.|رادار پرتویی از امواج رادیویی ارسال می‌کند.
+3|microprocessor|ریزپردازنده|The microprocessor calculates the speed of each vehicle.|ریزپردازنده سرعت هر خودرو را محاسبه می‌کند.
+3|OCR|تشخیص نوری حروف|OCR software reads the number plates.|نرم‌افزار OCR پلاک‌ها را می‌خواند.
+3|database|پایگاه داده|The owner is traced using the vehicle database.|مالک خودرو با پایگاه داده ردیابی می‌شود.
+3|mailmerge|ادغام نامه|A standard letter is printed using mailmerge.|یک نامه‌ی استاندارد با ادغام نامه چاپ می‌شود.
+3|barcode|بارکد|The scanner reads the barcode on the item.|اسکنر بارکد روی کالا را می‌خواند.
+3|EPOS till|صندوق فروش الکترونیکی|The EPOS till prints the item and price on the receipt.|صندوق فروش کالا و قیمت را روی رسید چاپ می‌کند.
+3|data link|پیوند داده|A data link connects the two cameras.|یک پیوند داده دو دوربین را به هم وصل می‌کند.
+3|data mining|داده‌کاوی|Data mining filters large amounts of raw data.|داده‌کاوی حجم زیادی داده‌ی خام را پالایش می‌کند.
+3|artificial intelligence|هوش مصنوعی|Artificial intelligence tries to work like the human brain.|هوش مصنوعی می‌کوشد مانند مغز انسان کار کند.
+3|neural network|شبکه عصبی|A neural network compares data until patterns appear.|شبکه‌ی عصبی داده‌ها را مقایسه می‌کند تا الگوها پدیدار شوند.
+3|cluster|خوشه|Clustering divides data into similar groups.|خوشه‌بندی داده‌ها را به گروه‌های مشابه تقسیم می‌کند.
+3|decision tree|درخت تصمیم|A decision tree separates data into subsets.|درخت تصمیم داده‌ها را به زیرمجموعه‌ها تقسیم می‌کند.
+3|data warehouse|انبار داده|A data warehouse archives huge amounts of data.|انبار داده حجم عظیمی از داده را بایگانی می‌کند.
+3|cleanse data|پاک‌سازی داده|You should cleanse data to remove duplicates and errors.|باید داده را پاک‌سازی کنی تا موارد تکراری و خطاها حذف شوند.
+3|speed trap|دوربین کنترل سرعت|Police installed a speed trap on the road.|پلیس روی جاده دوربین کنترل سرعت نصب کرد.
+3|wavelength|طول موج|The reflected signal has a smaller wavelength.|سیگنال بازتابیده طول موج کوچک‌تری دارد.
+3|frequency|بسامد|The radar uses a frequency of 24 gigahertz.|رادار از بسامد ۲۴ گیگاهرتز استفاده می‌کند.
+3|registration number|شماره پلاک|The registration number is read by OCR.|شماره‌ی پلاک با OCR خوانده می‌شود.
+3|receipt|رسید|The till prints a paper receipt.|صندوق یک رسید کاغذی چاپ می‌کند.
+3|stock file|فایل موجودی|The computer searches the stock file.|رایانه فایل موجودی را جستجو می‌کند.
+3|present passive|مجهول حال|The information is stored on a smart card.|اطلاعات روی یک کارت هوشمند ذخیره می‌شود.
+4|input device|دستگاه ورودی|A keyboard is an input device.|صفحه‌کلید یک دستگاه ورودی است.
+4|output device|دستگاه خروجی|A printer is an output device.|چاپگر یک دستگاه خروجی است.
+4|CCD|حسگر CCD|A lens focuses the image on to the CCD.|لنز تصویر را روی CCD متمرکز می‌کند.
+4|pixel|پیکسل|A pixel is a tiny dot of an image.|پیکسل یک نقطه‌ی ریز از تصویر است.
+4|viewfinder|منظره‌یاب|Use the viewfinder to aim the camera accurately.|برای نشانه‌روی دقیق از منظره‌یاب استفاده کن.
+4|LCD screen|صفحه LCD|You can play back images on the LCD screen.|می‌توانی تصاویر را روی صفحه‌ی LCD ببینی.
+4|memory card|کارت حافظه|Digital cameras store images on a memory card.|دوربین‌های دیجیتال تصاویر را روی کارت حافظه ذخیره می‌کنند.
+4|rechargeable battery|باتری قابل شارژ|A rechargeable battery saves money.|باتری قابل شارژ در هزینه صرفه‌جویی می‌کند.
+4|conventional|معمولی / سنتی|A conventional camera uses film.|دوربین معمولی از فیلم استفاده می‌کند.
+4|ink-jet printer|چاپگر جوهرافشان|An ink-jet printer is cheap and gives good colour.|چاپگر جوهرافشان ارزان است و رنگ خوبی می‌دهد.
+4|laser printer|چاپگر لیزری|A laser printer gives excellent text quality.|چاپگر لیزری کیفیت متن عالی می‌دهد.
+4|removable hard disk|هارد دیسک قابل جابجایی|A removable hard disk is easy to carry.|هارد دیسک قابل جابجایی حمل آسانی دارد.
+4|magnetic tape|نوار مغناطیسی|Magnetic tape is used to back up large quantities of data.|نوار مغناطیسی برای پشتیبان‌گیری از داده‌های حجیم استفاده می‌شود.
+4|flash drive|فلش درایو|You can read from and write to a flash drive.|می‌توانی روی فلش درایو بخوانی و بنویسی.
+4|capacity|ظرفیت|DVDs have a higher capacity than CDs.|ظرفیت DVD از CD بیشتر است.
+4|areal density|چگالی سطحی|Areal density doubled every 18 months in the 1990s.|چگالی سطحی در دهه‌ی ۱۹۹۰ هر ۱۸ ماه دو برابر شد.
+4|holographic storage|ذخیره‌سازی هولوگرافیک|Holographic storage is three-dimensional.|ذخیره‌سازی هولوگرافیک سه‌بعدی است.
+4|scanner|اسکنر|A scanner inputs printed graphics.|اسکنر تصاویر چاپی را وارد می‌کند.
+4|microphone|میکروفون|A microphone records sound.|میکروفون صدا را ضبط می‌کند.
+4|touch screen|صفحه لمسی|A touch screen is used in public terminals.|صفحه‌ی لمسی در پایانه‌های عمومی استفاده می‌شود.
+4|joystick|دسته بازی|Use a joystick in a fast action game.|در بازی اکشن سریع از دسته‌ی بازی استفاده کن.
+4|plotter|پلاتر|A plotter prints building plan drawings.|پلاتر نقشه‌های ساختمان را چاپ می‌کند.
+4|headphones|هدفون|Headphones let you listen without disturbing others.|هدفون اجازه می‌دهد بدون مزاحمت برای دیگران گوش دهی.
+4|keyboard|صفحه‌کلید|Use a keyboard to input a lot of text.|برای وارد کردن متن زیاد از صفحه‌کلید استفاده کن.
+5|back up|پشتیبان‌گیری کردن|You should back up your files regularly.|فایل‌هایت را مرتب پشتیبان‌گیری کن.
+5|upgrade|ارتقا دادن|You can upgrade your PC with a new motherboard.|می‌توانی رایانه‌ات را با مادربرد جدید ارتقا دهی.
+5|free up|آزاد کردن|Delete some files to free up space.|چند فایل را پاک کن تا فضا آزاد شود.
+5|upload|بارگذاری کردن|Data is uploaded to the mainframe each night.|داده‌ها هر شب به مین‌فریم بارگذاری می‌شوند.
+5|start up|راه‌اندازی کردن|The system boots when you start up your computer.|وقتی رایانه را روشن می‌کنی سیستم‌عامل بوت می‌شود.
+5|update|به‌روزرسانی کردن|Update your software to fix bugs.|نرم‌افزارت را به‌روز کن تا باگ‌ها رفع شوند.
+5|build up|ساختن / افزایش دادن|She is taking a course to build up her knowledge.|او دوره‌ای می‌گذراند تا دانش خود را تقویت کند.
+5|set up|راه‌اندازی / تنظیم کردن|He set up a website for his travel company.|او برای شرکت مسافرتی‌اش یک وب‌سایت راه انداخت.
+5|keep up|همگام ماندن|Read PC magazines to keep up with developments.|مجله‌های رایانه بخوان تا با پیشرفت‌ها همگام بمانی.
+5|catch up|جبران عقب‌ماندگی|Study the hand-outs to catch up.|جزوه‌ها را بخوان تا عقب‌ماندگی را جبران کنی.
+5|log in|وارد شدن|Log in with your username and password.|با نام کاربری و گذرواژه وارد شو.
+5|sign up|ثبت‌نام کردن|Sign up for a free account.|برای یک حساب رایگان ثبت‌نام کن.
+5|plug in|وصل کردن به برق|Plug in the monitor cable.|کابل نمایشگر را وصل کن.
+5|fill in|پر کردن|Fill in the form with your details.|فرم را با اطلاعاتت پر کن.
+5|turn on|روشن کردن|Turn on the printer before printing.|قبل از چاپ، چاپگر را روشن کن.
+5|turn off|خاموش کردن|Turn off the computer when you finish.|وقتی کارت تمام شد رایانه را خاموش کن.
+5|look up|جستجو کردن|Look up the word in the dictionary.|واژه را در دیکشنری جستجو کن.
+5|speed up|سرعت بخشیدن|Upgrade your RAM to speed up the PC.|برای سرعت بخشیدن به رایانه، RAM را ارتقا بده.
+5|slow down|کند شدن|The old laptop slows down when it heats up.|لپ‌تاپ قدیمی وقتی گرم می‌شود کند می‌شود.
+5|run out|تمام شدن|The battery ran out of power.|باتری تمام شد.
+5|figure out|فهمیدن / کشف کردن|I figured out what caused the bug.|فهمیدم چه چیزی باعث باگ شده بود.
+5|clean up|پاک‌سازی کردن|Clean up the cache to free space.|حافظه‌ی نهان را پاک‌سازی کن تا فضا آزاد شود.
+6|operating system|سیستم‌عامل|An operating system lies between software and hardware.|سیستم‌عامل بین نرم‌افزار و سخت‌افزار قرار دارد.
+6|kernel|هسته|The kernel handles memory allocation.|هسته تخصیص حافظه را مدیریت می‌کند.
+6|source code|کد منبع|Without the source code you can't fix bugs.|بدون کد منبع نمی‌توانی باگ‌ها را رفع کنی.
+6|supervisor program|برنامه ناظر|The supervisor program controls the entire operating system.|برنامه‌ی ناظر کل سیستم‌عامل را کنترل می‌کند.
+6|resident program|برنامه مقیم|A resident program stays in memory.|برنامه‌ی مقیم در حافظه می‌ماند.
+6|non-resident program|برنامه غیرمقیم|Non-resident programs load only when needed.|برنامه‌های غیرمقیم فقط در صورت نیاز بارگذاری می‌شوند.
+6|command line|خط فرمان|Linux offers a command line and a GUI.|لینوکس خط فرمان و رابط گرافیکی دارد.
+6|open source|متن‌باز|Open source means anyone can contribute.|متن‌باز یعنی هر کسی می‌تواند مشارکت کند.
+6|distribution|توزیع (لینوکس)|A distribution is a complete operating system kit.|توزیع یک بسته‌ی کامل سیستم‌عامل است.
+6|multitasking|چندوظیفگی|Pre-emptive multitasking runs several programs at once.|چندوظیفگی پیش‌دستانه چند برنامه را همزمان اجرا می‌کند.
+6|log on|وارد شدن|He can't get used to logging on with a password.|او نمی‌تواند به ورود با گذرواژه عادت کند.
+6|password|گذرواژه|Enter your login password.|گذرواژه‌ی ورودت را وارد کن.
+6|directory|پوشه / دایرکتوری|The ls command lists all files in a directory.|دستور ls همه‌ی فایل‌های یک پوشه را فهرست می‌کند.
+6|freeware|نرم‌افزار رایگان|Some operating systems are distributed as freeware.|برخی سیستم‌عامل‌ها به‌صورت رایگان توزیع می‌شوند.
+6|Unix|یونیکس|Unix was the wonder operating system of the 1970s.|یونیکس سیستم‌عامل شگفت‌انگیز دهه‌ی ۷۰ بود.
+6|Linux|لینوکس|Linux began as a student project.|لینوکس به‌عنوان یک پروژه‌ی دانشجویی شروع شد.
+6|user interface|رابط کاربری|The OS establishes a user interface.|سیستم‌عامل رابط کاربری را برقرار می‌کند.
+6|memory allocation|تخصیص حافظه|The kernel handles memory allocation.|هسته تخصیص حافظه را انجام می‌دهد.
+6|bug|باگ / اشکال نرم‌افزاری|Programmers fix bugs in the code.|برنامه‌نویسان باگ‌های کد را رفع می‌کنند.
+6|process|فرایند|Each running program is a process.|هر برنامه‌ی در حال اجرا یک فرایند است.
+6|scheduler|زمان‌بند|The scheduler decides which process runs next.|زمان‌بند تعیین می‌کند کدام فرایند بعدی اجرا شود.
+7|GUI|رابط گرافیکی|A GUI lets you point to icons and click.|رابط گرافیکی به تو اجازه می‌دهد به آیکون‌ها اشاره و کلیک کنی.
+7|window|پنجره|Each program opens in its own window.|هر برنامه در پنجره‌ی خودش باز می‌شود.
+7|icon|آیکون|Double-click the icon to start the program.|روی آیکون دوبار کلیک کن تا برنامه شروع شود.
+7|menu|منو|Choose Shut Down from the menu.|از منو گزینه‌ی خاموش کردن را انتخاب کن.
+7|submenu|زیرمنو|A submenu opens when you point to an option.|وقتی به گزینه اشاره کنی زیرمنو باز می‌شود.
+7|taskbar|نوار وظیفه|The taskbar shows the programs that are running.|نوار وظیفه برنامه‌های در حال اجرا را نشان می‌دهد.
+7|system tray|ناحیه اعلان|The clock is in the system tray.|ساعت در ناحیه‌ی اعلان است.
+7|desktop|دسکتاپ|Icons are arranged on the desktop.|آیکون‌ها روی دسکتاپ چیده شده‌اند.
+7|button|دکمه|Click the Start button.|روی دکمه‌ی Start کلیک کن.
+7|scrollbar|نوار پیمایش|Use the scrollbar to see more of the window.|از نوار پیمایش برای دیدن بخش‌های بیشتر پنجره استفاده کن.
+7|Recycle Bin|سطل بازیافت|Deleted files go to the Recycle Bin.|فایل‌های پاک‌شده به سطل بازیافت می‌روند.
+7|dock|داک|The Dock gives you instant access to your applications.|داک دسترسی فوری به برنامه‌هایت می‌دهد.
+7|folder|پوشه|Double-click a folder to display its contents.|روی پوشه دوبار کلیک کن تا محتوایش نمایش داده شود.
+7|drag and drop|کشیدن و رها کردن|Drag and drop the file into the folder.|فایل را بکش و در پوشه رها کن.
+7|tooltip|راهنمای شناور|A tooltip appears when you hover over a button.|وقتی نشانگر را روی دکمه نگه داری راهنمای شناور ظاهر می‌شود.
+7|right-click|کلیک راست|Right-click the file, then choose Cut.|روی فایل راست‌کلیک کن، سپس Cut را بزن.
+7|speech recognition|تشخیص گفتار|Speech recognition will change interface design.|تشخیص گفتار طراحی رابط‌ها را تغییر خواهد داد.
+7|multimodal interface|رابط چندحالته|A multimodal interface combines several kinds of input.|رابط چندحالته چند نوع ورودی را ترکیب می‌کند.
+7|intelligent agent|عامل هوشمند|An intelligent agent automates repetitive tasks.|عامل هوشمند کارهای تکراری را خودکار می‌کند.
+7|text to speech (TTS)|تبدیل متن به گفتار|TTS lets the computer read text aloud.|TTS به رایانه اجازه می‌دهد متن را بلند بخواند.
+7|enable|قادر ساختن|Voice software enables disabled users to access computers.|نرم‌افزار صوتی کاربران معلول را قادر به استفاده از رایانه می‌کند.
+7|cursor|نشانگر|Move the cursor to the icon.|نشانگر را به آیکون ببر.
+7|shortcut menu|منوی میان‌بر|Click Cut on the shortcut menu.|روی منوی میان‌بر Cut را بزن.
+7|clipboard|کلیپ‌بورد|Copy the image to the Clipboard.|تصویر را در کلیپ‌بورد کپی کن.
+7|hover|نگه داشتن نشانگر|Hover over the button to see a tooltip.|نشانگر را روی دکمه نگه دار تا راهنما را ببینی.
+7|select|انتخاب کردن|Select the file you want to move.|فایلی را که می‌خواهی جابجا کنی انتخاب کن.
+7|handwriting recognition|تشخیص دست‌خط|PCs will have handwriting recognition.|رایانه‌ها تشخیص دست‌خط خواهند داشت.
+8|spreadsheet|صفحه‌گسترده|A spreadsheet calculates salaries automatically.|صفحه‌گسترده حقوق‌ها را خودکار محاسبه می‌کند.
+8|word processor|واژه‌پرداز|I wrote the report in a word processor.|گزارش را با واژه‌پرداز نوشتم.
+8|DTP|نشر رومیزی|DTP software is used to produce a newsletter.|از نرم‌افزار نشر رومیزی برای تهیه‌ی خبرنامه استفاده می‌شود.
+8|PIM|مدیر اطلاعات شخصی|A PIM stores contacts and appointments.|PIM مخاطبین و قرارهای ملاقات را ذخیره می‌کند.
+8|file server|سرور فایل|The file server is in Reception.|سرور فایل در پذیرش است.
+8|LAN|شبکه محلی|The medical centre uses a local area network.|مرکز پزشکی از یک شبکه‌ی محلی استفاده می‌کند.
+8|payroll|حقوق و دستمزد|A payroll package calculates salaries.|بسته‌ی حقوق و دستمزد، حقوق‌ها را محاسبه می‌کند.
+8|search criteria|معیارهای جستجو|Enter the search criteria, then click Find.|معیارهای جستجو را وارد کن، سپس روی Find بزن.
+8|tab|زبانه|Click on the Address tab.|روی زبانه‌ی Address کلیک کن.
+8|application service provider|ارائه‌دهنده سرویس نرم‌افزار|You rent applications from an application service provider.|نرم‌افزارها را از یک ارائه‌دهنده‌ی سرویس اجاره می‌کنی.
+8|bandwidth|پهنای باند|Remote applications require a lot of bandwidth.|برنامه‌های راه‌دور به پهنای باند زیادی نیاز دارند.
+8|broadband|پهن‌باند|A broadband connection is fast.|اتصال پهن‌باند سریع است.
+8|office suite|مجموعه آفیس|An office suite includes a word processor and spreadsheet.|مجموعه‌ی آفیس شامل واژه‌پرداز و صفحه‌گسترده است.
+8|outsource|برون‌سپاری کردن|Many firms outsource their email services.|بسیاری از شرکت‌ها خدمات ایمیل خود را برون‌سپاری می‌کنند.
+8|e-commerce|تجارت الکترونیک|E-commerce businesses need huge storage.|کسب‌وکارهای تجارت الکترونیک به فضای ذخیره‌ی زیادی نیاز دارند.
+8|data centre|مرکز داده|ASPs lease space from a data centre.|ارائه‌دهندگان فضا را از یک مرکز داده اجاره می‌کنند.
+8|autocorrect|تصحیح خودکار|You can disable the autocorrect.|می‌توانی تصحیح خودکار را غیرفعال کنی.
+8|presentation program|برنامه ارائه|A salesperson uses a presentation program.|فروشنده از برنامه‌ی ارائه استفاده می‌کند.
+8|email|ایمیل|Reception staff send email to patients.|کارکنان پذیرش به بیماران ایمیل می‌فرستند.
+8|website editor|ویرایشگر وب‌سایت|A website editor helps build a company site.|ویرایشگر وب‌سایت به ساخت سایت شرکت کمک می‌کند.
+8|developer tools|ابزارهای توسعه|Programmers need developer tools.|برنامه‌نویسان به ابزارهای توسعه نیاز دارند.
+8|appointment|وقت ملاقات|Reception enter each appointment on the system.|پذیرش هر وقت ملاقات را در سیستم وارد می‌کند.
+8|diagnosis|تشخیص بیماری|The doctor enters the diagnosis and treatment.|پزشک تشخیص و درمان را وارد می‌کند.
+8|prescribe|تجویز کردن|The system helps doctors prescribe drugs.|سیستم به پزشکان در تجویز دارو کمک می‌کند.
+8|flexibility|انعطاف‌پذیری|An ASP gives you more flexibility.|ارائه‌دهنده‌ی سرویس انعطاف‌پذیری بیشتری می‌دهد.
+8|reliable|قابل اعتماد|The service must be secure and reliable.|سرویس باید امن و قابل اعتماد باشد.
+8|secure|امن|Choose a secure service for your data.|برای داده‌هایت سرویس امن انتخاب کن.
+8|ASP|ارائه‌دهنده سرویس نرم‌افزار|An ASP provides remote access to software.|ASP دسترسی از راه دور به نرم‌افزار را فراهم می‌کند.
+9|router|مسیریاب|The router directs packets between networks.|مسیریاب بسته‌ها را بین شبکه‌ها هدایت می‌کند.
+9|switch|سوئیچ|A switch connects devices within a LAN.|سوئیچ دستگاه‌ها را درون یک شبکه محلی به هم وصل می‌کند.
+9|firewall|فایروال|The firewall blocks suspicious traffic.|فایروال ترافیک مشکوک را مسدود می‌کند.
+9|IP address|آدرس آی‌پی|Each device has a unique IP address.|هر دستگاه یک آدرس آی‌پی منحصربه‌فرد دارد.
+9|subnet|زیرشبکه|The subnet groups devices in the same range.|زیرشبکه دستگاه‌های موجود در یک محدوده را گروه‌بندی می‌کند.
+9|DNS|سامانه نام دامنه|DNS translates domain names into IP addresses.|DNS نام دامنه را به آدرس آی‌پی تبدیل می‌کند.
+9|DHCP|پروتکل پیکربندی پویا|DHCP assigns IP addresses automatically.|DHCP آدرس‌های آی‌پی را به‌صورت خودکار تخصیص می‌دهد.
+9|bandwidth|پهنای باند|High bandwidth allows more data per second.|پهنای باند بالا اجازه‌ی انتقال داده بیشتر در ثانیه را می‌دهد.
+9|latency|تأخیر|Low latency is essential for online gaming.|تأخیر پایین برای بازی آنلاین حیاتی است.
+9|packet|بسته|The message is split into small packets.|پیام به بسته‌های کوچک تقسیم می‌شود.
+9|protocol|پروتکل|TCP/IP is the basic Internet protocol.|TCP/IP پروتکل پایه‌ی اینترنت است.
+9|TCP/IP|پروتکل کنترل انتقال|TCP/IP is used for most network traffic.|TCP/IP برای بیشتر ترافیک شبکه استفاده می‌شود.
+9|HTTP|پروتکل انتقال ابرمتن|Websites are delivered over HTTP.|وب‌سایت‌ها از طریق HTTP تحویل داده می‌شوند.
+9|FTP|پروتکل انتقال فایل|FTP is used to upload files to a server.|FTP برای بارگذاری فایل روی سرور استفاده می‌شود.
+9|VPN|شبکه خصوصی مجازی|A VPN encrypts your traffic.|VPN ترافیک شما را رمزنگاری می‌کند.
+9|WAN|شبکه گسترده|A WAN connects offices in different cities.|WAN دفاتر موجود در شهرهای مختلف را به هم وصل می‌کند.
+9|Ethernet|اترنت|Ethernet uses cables for fast connections.|اترنت از کابل برای اتصال سریع استفاده می‌کند.
+9|Wi-Fi|وای‌فای|Wi-Fi allows wireless connections.|وای‌فای اتصال بی‌سیم را ممکن می‌کند.
+9|modem|مودم|The modem converts signals for phone lines.|مودم سیگنال‌ها را برای خطوط تلفن تبدیل می‌کند.
+9|gateway|دروازه|The default gateway connects to the Internet.|دروازه پیش‌فرض به اینترنت وصل می‌شود.
+9|proxy|پراکسی|A proxy server filters or caches requests.|سرور پراکسی درخواست‌ها را فیلتر یا کش می‌کند.
+9|packet switching|سوئیچینگ بسته|Packet switching sends data through different routes.|سوئیچینگ بسته داده را از مسیرهای مختلف می‌فرستد.
+9|topology|همبندی شبکه|Star topology connects all nodes to a central hub.|همبندی ستاره‌ای همه‌ی گره‌ها را به یک هاب مرکزی وصل می‌کند.
+10|malware|بدافزار|Malware damages or steals from a computer.|بدافزار به رایانه آسیب می‌زند یا اطلاعات می‌دزدد.
+10|ransomware|باج‌افزار|Ransomware encrypts your files until you pay.|باج‌افزار فایل‌ها را تا زمان پرداخت رمز می‌کند.
+10|phishing|فیشینگ|Phishing emails trick users into giving passwords.|ایمیل‌های فیشینگ کاربران را فریب می‌دهند تا گذرواژه بدهند.
+10|encryption|رمزنگاری|Encryption protects data in transit.|رمزنگاری از داده در حال انتقال محافظت می‌کند.
+10|decryption|رمزگشایی|Only the key holder can do decryption.|فقط دارنده‌ی کلید می‌تواند رمزگشایی کند.
+10|authentication|احراز هویت|Two-factor authentication adds a second check.|احراز هویت دو مرحله‌ای یک بررسی دوم اضافه می‌کند.
+10|authorization|مجوزدهی|Authorization defines what a user can do.|مجوزدهی تعیین می‌کند کاربر چه کاری می‌تواند انجام دهد.
+10|hash|هش|A hash is a one-way fingerprint of data.|هش یک اثر انگشت یک‌طرفه از داده است.
+10|digital signature|امضای دیجیتال|A digital signature proves the sender's identity.|امضای دیجیتال هویت فرستنده را اثبات می‌کند.
+10|SSL/TLS|پروتکل لایه امن|SSL/TLS secures websites with HTTPS.|SSL/TLS وب‌سایت‌ها را با HTTPS امن می‌کند.
+10|vulnerability|آسیب‌پذیری|A vulnerability is a weakness in software.|آسیب‌پذیری یک نقطه ضعف در نرم‌افزار است.
+10|exploit|اکسپلویت|An exploit takes advantage of a bug.|اکسپلویت از یک باگ سوءاستفاده می‌کند.
+10|trojan|تروجان|A trojan hides inside legitimate software.|تروجان داخل نرم‌افزار قانونی پنهان می‌شود.
+10|spyware|جاسوس‌افزار|Spyware records your activity secretly.|جاسوس‌افزار فعالیت شما را مخفیانه ثبت می‌کند.
+10|antivirus|آنتی‌ویروس|Antivirus software scans for known threats.|آنتی‌ویروس نرم‌افزار را برای تهدیدهای شناخته‌شده اسکن می‌کند.
+10|patch|وصله|Install the patch to fix the security hole.|برای رفع حفره‌ی امنیتی وصله را نصب کن.
+10|brute force|حمله جستجوی فراگیر|A brute force attack tries every password.|حمله جستجوی فراگیر همه‌ی گذرواژه‌ها را امتحان می‌کند.
+10|zero-day|آسیب روز-صفر|A zero-day exploit has no patch yet.|اکسپلویت روز-صفر هنوز وصله ندارد.
+10|penetration testing|آزمون نفوذ|Penetration testing finds weaknesses ethically.|آزمون نفوذ ضعف‌ها را به‌صورت اخلاقی پیدا می‌کند.
+10|biometry|زیست‌سنجی|Biometry uses fingerprints or faces for login.|زیست‌سنجی از اثر انگشت یا چهره برای ورود استفاده می‌کند.
+10|cryptography|رمزنگاری|Modern cryptography relies on math puzzles.|رمزنگاری مدرن بر معماهای ریاضی تکیه دارد.
+10|access control|کنترل دسترسی|Access control restricts who can enter the system.|کنترل دسترسی محدود می‌کند چه کسی می‌تواند وارد سیستم شود.
+10|session hijacking|ربایش نشست|Session hijacking steals an active login.|ربایش نشست یک ورود فعال را می‌دزدد.
+11|algorithm|الگوریتم|An algorithm is a step-by-step solution.|الگوریتم یک راه‌حل گام‌به‌گام است.
+11|variable|متغیر|A variable stores a value in memory.|متغیر یک مقدار را در حافظه ذخیره می‌کند.
+11|function|تابع|A function groups reusable code.|تابع کد قابل استفاده مجدد را گروه‌بندی می‌کند.
+11|loop|حلقه|A loop repeats code until a condition ends.|حلقه کد را تا زمان برآورده شدن شرط تکرار می‌کند.
+11|conditional|شرطی|A conditional runs code only if a test passes.|شرطی کد را تنها در صورت موفقیت آزمون اجرا می‌کند.
+11|array|آرایه|An array stores many items of one type.|آرایه بسیاری از آیتم‌های یک نوع را ذخیره می‌کند.
+11|object|شیء|An object bundles data and behavior.|شیء داده و رفتار را در یک بسته قرار می‌دهد.
+11|class|کلاس|A class is a template for objects.|کلاس یک الگو برای اشیاء است.
+11|inheritance|وراثت|Inheritance lets a class reuse another's code.|وراثت به یک کلاس اجازه می‌دهد کد کلاس دیگر را بازاستفاده کند.
+11|encapsulation|کپسوله‌سازی|Encapsulation hides internal details.|کپسوله‌سازی جزئیات درونی را پنهان می‌کند.
+11|polymorphism|چندریختی|Polymorphism lets one interface fit many types.|چندریختی اجازه می‌دهد یک رابط برای انواع مختلف کار کند.
+11|recursion|بازگشت|Recursion calls a function from itself.|بازگشت یک تابع را از داخل خودش فراخوانی می‌کند.
+11|compiler|کامپایلر|A compiler translates source code to machine code.|کامپایلر کد منبع را به کد ماشین ترجمه می‌کند.
+11|interpreter|مفسر|An interpreter runs code line by line.|مفسر کد را خط به خط اجرا می‌کند.
+11|syntax|نحو|A syntax error stops the program from running.|خطای نحو مانع اجرای برنامه می‌شود.
+11|debug|اشکال‌زدایی|Use a debugger to find the bug.|از اشکال‌زدا برای یافتن باگ استفاده کن.
+11|IDE|محیط توسعه یکپارچه|An IDE combines an editor and a debugger.|IDE یک ویرایشگر و اشکال‌زدا را ترکیب می‌کند.
+11|API|رابط برنامه‌نویسی|An API lets programs talk to each other.|API به برنامه‌ها اجازه می‌دهد با هم صحبت کنند.
+11|library|کتابخانه|A library is a set of reusable code.|کتابخانه مجموعه‌ای از کد قابل استفاده مجدد است.
+11|framework|چارچوب|A framework provides structure for your app.|چارچوب ساختار برنامه‌ی شما را فراهم می‌کند.
+11|refactoring|بازآرایی|Refactoring improves code without changing behavior.|بازآرایی کد را بدون تغییر رفتار بهبود می‌دهد.
+11|version control|کنترل نسخه|Version control tracks changes to the code.|کنترل نسخه تغییرات کد را ردیابی می‌کند.
+11|repository|مخزن|Push your code to the repository.|کدت را به مخزن بفرست.
+11|commit|ثبت تغییرات|Each commit is a snapshot of changes.|هر ثبت یک تصویر لحظه‌ای از تغییرات است.
+11|merge|ادغام|Merge the feature branch into main.|شاخه‌ی ویژگی را در main ادغام کن.
+12|database|پایگاه داده|A database stores organized information.|پایگاه داده اطلاعات سازمان‌یافته را ذخیره می‌کند.
+12|table|جدول|Each table holds rows of data.|هر جدول سطرهایی از داده را نگه می‌دارد.
+12|record|رکورد|A record is one row in a table.|رکورد یک سطر در جدول است.
+12|field|فیلد|A field is a column in a table.|فیلد یک ستون در جدول است.
+12|primary key|کلید اصلی|The primary key uniquely identifies a row.|کلید اصلی یک سطر را منحصربه‌فرد شناسایی می‌کند.
+12|foreign key|کلید خارجی|A foreign key links two tables.|کلید خارجی دو جدول را به هم متصل می‌کند.
+12|query|پرس‌وجو|A query retrieves data from a database.|پرس‌وجو داده را از پایگاه داده بازیابی می‌کند.
+12|SQL|زبان پرس‌وجوی ساختاریافته|SQL is the standard database language.|SQL زبان استاندارد پایگاه داده است.
+12|join|اتصال|A join combines rows from two tables.|اتصال سطرهای دو جدول را ترکیب می‌کند.
+12|index|نمایه|An index speeds up lookups.|نمایه جستجوها را سریع‌تر می‌کند.
+12|normalization|نرمال‌سازی|Normalization removes duplicate data.|نرمال‌سازی داده‌های تکراری را حذف می‌کند.
+12|transaction|تراکنش|A transaction must complete fully or not at all.|تراکنش باید کامل یا اصلاً انجام نشود.
+12|NoSQL|پایگاه داده غیرساختاری|NoSQL databases handle unstructured data.|پایگاه‌داده‌های NoSQL داده‌های غیرساختاریافته را مدیریت می‌کنند.
+12|schema|طرح‌واره|The schema defines tables and relationships.|طرح‌واره جدول‌ها و روابط را تعریف می‌کند.
+12|stored procedure|رویه ذخیره‌شده|A stored procedure runs inside the database.|رویه‌ی ذخیره‌شده درون پایگاه داده اجرا می‌شود.
+12|trigger|تریگر|A trigger runs automatically on changes.|تریگر به‌صورت خودکار با تغییرات اجرا می‌شود.
+12|view|نما|A view is a saved query.|نما یک پرس‌وجوی ذخیره‌شده است.
+12|CRUD|عملیات چهارگانه|CRUD covers create, read, update, delete.|CRUD شامل ایجاد، خواندن، به‌روزرسانی و حذف است.
+12|replication|همانندسازی|Replication copies data to another server.|همانندسازی داده را در سرور دیگری کپی می‌کند.
+12|backup|نسخه پشتیبان|Schedule daily backups of the database.|نسخه‌های پشتیبان روزانه از پایگاه داده بگیر.
+13|HTML|زبان نشانه‌گذاری|HTML gives structure to web pages.|HTML به صفحات وب ساختار می‌دهد.
+13|CSS|شیوه‌نامه آبشاری|CSS controls the look of a page.|CSS ظاهر صفحه را کنترل می‌کند.
+13|JavaScript|جاوااسکریپت|JavaScript makes pages interactive.|جاوااسکریپت صفحات را تعاملی می‌کند.
+13|frontend|فرانت‌اند|The frontend runs in the browser.|فرانت‌اند در مرورگر اجرا می‌شود.
+13|backend|بک‌اند|The backend handles logic and data.|بک‌اند منطق و داده را مدیریت می‌کند.
+13|full-stack|فول‌استک|A full-stack developer works on both sides.|توسعه‌دهنده‌ی فول‌استک در هر دو طرف کار می‌کند.
+13|responsive|واکنش‌گرا|A responsive design fits any screen.|طراحی واکنش‌گرا با هر صفحه‌ای سازگار است.
+13|REST API|رابط REST|The app communicates through a REST API.|برنامه از طریق REST API ارتباط برقرار می‌کند.
+13|JSON|جی‌سان|JSON is a lightweight data format.|JSON یک قالب داده‌ی سبک است.
+13|AJAX|ایجکس|AJAX loads data without reloading the page.|ایجکس داده را بدون بارگذاری مجدد صفحه می‌گیرد.
+13|cookie|کوکی|A cookie stores user preferences.|کوکی ترجیحات کاربر را ذخیره می‌کند.
+13|session|نشست|A session tracks a logged-in user.|نشست کاربر وارد شده را ردیابی می‌کند.
+13|DOM|مدل شیء سند|The DOM represents the page structure.|DOM ساختار صفحه را نمایش می‌دهد.
+13|SEO|بهینه‌سازی موتور جستجو|Good SEO brings more visitors.|SEO خوب بازدیدکنندگان بیشتری می‌آورد.
+13|hosting|میزبانی|Choose a fast hosting provider.|یک ارائه‌دهنده‌ی میزبانی سریع انتخاب کن.
+13|domain|دامنه|Register a domain for your website.|برای وب‌سایتت یک دامنه ثبت کن.
+13|HTTPS|اچ‌تی‌تی‌پی امن|HTTPS encrypts traffic to the site.|HTTPS ترافیک به سایت را رمزنگاری می‌کند.
+13|CDN|شبکه توزیع محتوا|A CDN caches content near users.|CDN محتوا را در نزدیکی کاربران کش می‌کند.
+13|deployment|استقرار|Deployment publishes the app online.|استقرار برنامه را روی اینترنت منتشر می‌کند.
+13|wireframe|طرح اولیه|Sketch a wireframe before coding.|قبل از کدنویسی طرح اولیه بکش.
+13|CORS|اشتراک منابع بین‌مبدأ|CORS controls cross-origin requests.|CORS درخواست‌های بین‌مبدأ را کنترل می‌کند.
+13|webpack|وب‌پک|webpack bundles JavaScript modules.|وب‌پک ماژول‌های جاوااسکریپت را بسته‌بندی می‌کند.
+14|artificial intelligence|هوش مصنوعی|Artificial intelligence simulates human thinking.|هوش مصنوعی تفکر انسانی را شبیه‌سازی می‌کند.
+14|machine learning|یادگیری ماشین|Machine learning improves with data.|یادگیری ماشین با داده بهبود می‌یابد.
+14|deep learning|یادگیری عمیق|Deep learning uses many neural layers.|یادگیری عمیق از لایه‌های عصبی زیادی استفاده می‌کند.
+14|neural network|شبکه عصبی|A neural network learns patterns from examples.|شبکه‌ی عصبی الگوها را از مثال‌ها یاد می‌گیرد.
+14|training data|داده آموزشی|Good training data is essential.|داده‌ی آموزشی خوب حیاتی است.
+14|model|مدل|The model predicts the next word.|مدل واژه‌ی بعدی را پیش‌بینی می‌کند.
+14|supervised learning|یادگیری نظارت‌شده|Supervised learning uses labeled examples.|یادگیری نظارت‌شده از مثال‌های برچسب‌دار استفاده می‌کند.
+14|unsupervised learning|یادگیری بدون نظارت|Unsupervised learning finds hidden groups.|یادگیری بدون نظارت گروه‌های پنهان را پیدا می‌کند.
+14|reinforcement learning|یادگیری تقویتی|Reinforcement learning learns from rewards.|یادگیری تقویتی از پاداش‌ها یاد می‌گیرد.
+14|NLP|پردازش زبان طبیعی|NLP lets machines understand text.|NLP ماشین‌ها را قادر به درک متن می‌کند.
+14|computer vision|بینایی ماشین|Computer vision recognizes objects in images.|بینایی ماشین اشیاء را در تصاویر تشخیص می‌دهد.
+14|chatbot|چت‌بات|A chatbot answers customer questions.|چت‌بات به سؤالات مشتری پاسخ می‌دهد.
+14|LLM|مدل زبانی بزرگ|An LLM is trained on huge text corpora.|LLM روی پیکره‌های متنی عظیم آموزش دیده است.
+14|inference|استنتاج|Inference runs a trained model.|استنتاج یک مدل آموزش‌دیده را اجرا می‌کند.
+14|overfitting|بیش‌برازش|Overfitting fits noise instead of signal.|بیش‌برازش نویز را به‌جای سیگنال یاد می‌گیرد.
+14|dataset|مجموعه داده|Split the dataset into train and test.|مجموعه داده را به آموزش و آزمون تقسیم کن.
+14|feature|ویژگی|A feature is an input variable.|ویژگی یک متغیر ورودی است.
+14|label|برچسب|Each example has a correct label.|هر نمونه یک برچسب درست دارد.
+14|prediction|پیش‌بینی|The prediction is more than 90% accurate.|پیش‌بینی بیش از ۹۰ درصد دقیق است.
+14|accuracy|دقت|Accuracy measures correct predictions.|دقت پیش‌بینی‌های صحیح را اندازه می‌گیرد.
+14|transformer|ترانسفورمر|Transformers power modern language models.|ترانسفورمرها مدل‌های زبانی مدرن را نیرو می‌دهند.
+14|fine-tuning|تنظیم دقیق|Fine-tuning adapts a model to a new task.|تنظیم دقیق مدل را با یک وظیفه‌ی جدید سازگار می‌کند.
+15|cloud computing|رایانش ابری|Cloud computing rents computing over the Internet.|رایانش ابری محاسبات را روی اینترنت اجاره می‌دهد.
+15|IaaS|زیرساخت به‌عنوان سرویس|IaaS provides virtual servers.|IaaS سرورهای مجازی ارائه می‌دهد.
+15|PaaS|پلتفرم به‌عنوان سرویس|PaaS provides a ready runtime.|PaaS یک محیط اجرای آماده ارائه می‌دهد.
+15|SaaS|نرم‌افزار به‌عنوان سرویس|SaaS delivers apps through the browser.|SaaS برنامه‌ها را از طریق مرورگر تحویل می‌دهد.
+15|virtualization|مجازی‌سازی|Virtualization splits one server into many.|مجازی‌سازی یک سرور را به چندین سرور تقسیم می‌کند.
+15|container|کانتینر|A container packages code and dependencies.|کانتینر کد و وابستگی‌ها را بسته‌بندی می‌کند.
+15|Docker|داکر|Docker builds and runs containers.|داکر کانتینرها را می‌سازد و اجرا می‌کند.
+15|Kubernetes|کوبرنتیز|Kubernetes orchestrates containers at scale.|کوبرنتیز کانتینرها را در مقیاس بزرگ هماهنگ می‌کند.
+15|virtual machine|ماشین مجازی|A virtual machine runs its own OS.|ماشین مجازی سیستم‌عامل خودش را اجرا می‌کند.
+15|hypervisor|ناظر مجازی‌سازی|The hypervisor manages virtual machines.|ناظر مجازی‌سازی ماشین‌های مجازی را مدیریت می‌کند.
+15|scalability|مقیاس‌پذیری|Scalability handles growing demand.|مقیاس‌پذیری تقاضای در حال رشد را مدیریت می‌کند.
+15|load balancer|متعادل‌کننده بار|A load balancer spreads traffic across servers.|متعادل‌کننده بار ترافیک را بین سرورها پخش می‌کند.
+15|serverless|بدون سرور|Serverless runs code on demand.|بدون سرور کد را در صورت نیاز اجرا می‌کند.
+15|microservices|ریزسرویس‌ها|Microservices split apps into small services.|ریزسرویس‌ها برنامه را به سرویس‌های کوچک تقسیم می‌کنند.
+15|region|منطقه|Choose the region closest to users.|منطقه‌ی نزدیک به کاربران را انتخاب کن.
+15|auto-scaling|مقیاس خودکار|Auto-scaling adds servers when needed.|مقیاس خودکار سرورها را در صورت نیاز اضافه می‌کند.
+15|SLA|توافق سطح خدمات|The SLA promises 99.9% uptime.|SLA ۹۹.۹ درصد زمان کارکرد را تضمین می‌کند.
+15|hybrid cloud|ابر ترکیبی|Hybrid cloud mixes private and public.|ابر ترکیبی خصوصی و عمومی را ترکیب می‌کند.
+15|data center|مرکز داده|The data center hosts thousands of servers.|مرکز داده هزاران سرور را میزبانی می‌کند.
+15|multi-tenancy|چندمستأجری|Multi-tenancy shares resources between customers.|چندمستأجری منابع را بین مشتریان به اشتراک می‌گذارد.
+16|mobile app|اپلیکیشن موبایل|The mobile app tracks your steps.|اپلیکیشن موبایل قدم‌های شما را ثبت می‌کند.
+16|Android|اندروید|Android is the most popular mobile OS.|اندروید محبوب‌ترین سیستم‌عامل موبایل است.
+16|iOS|آی‌اواس|iOS runs on iPhone.|iOS روی آیفون اجرا می‌شود.
+16|SDK|کیت توسعه نرم‌افزار|Install the SDK to build apps.|برای ساخت برنامه، SDK را نصب کن.
+16|emulator|شبیه‌ساز|An emulator runs apps on your PC.|شبیه‌ساز برنامه‌ها را روی رایانه اجرا می‌کند.
+16|push notification|اعلان فوری|Push notifications remind users.|اعلان‌های فوری به کاربران یادآوری می‌کنند.
+16|in-app purchase|خرید درون‌برنامه|In-app purchase earns revenue.|خرید درون‌برنامه درآمد کسب می‌کند.
+16|native app|اپ نیتیو|A native app uses platform features.|اپ نیتیو از ویژگی‌های پلتفرم استفاده می‌کند.
+16|hybrid app|اپ ترکیبی|A hybrid app shares code across platforms.|اپ ترکیبی کد را بین پلتفرم‌ها به اشتراک می‌گذارد.
+16|cross-platform|چندسکویی|Cross-platform tools build for many OSes.|ابزارهای چندسکویی برای سیستم‌عامل‌های زیادی می‌سازند.
+16|APK|فایل نصب اندروید|The APK installs the app on Android.|APK برنامه را روی اندروید نصب می‌کند.
+16|app store|فروشگاه اپ|Publish your app on the App Store.|برنامه‌ات را در فروشگاه اپ منتشر کن.
+16|widget|ابزارک|A widget shows information on the home screen.|ابزارک اطلاعات را روی صفحه‌ی خانه نشان می‌دهد.
+16|gesture|اشاره لمسی|A gesture opens the menu.|یک اشاره لمسی منو را باز می‌کند.
+16|biometric|زیست‌سنجی|Biometric login uses your fingerprint.|ورود زیست‌سنجی از اثر انگشت شما استفاده می‌کند.
+16|offline mode|حالت آفلاین|Offline mode caches data locally.|حالت آفلاین داده را به‌صورت محلی کش می‌کند.
+16|sync|همگام‌سازی|Sync your notes across devices.|یادداشت‌هایت را بین دستگاه‌ها همگام کن.
+16|GPS|جی‌پی‌اس|GPS tells the app where you are.|GPS به برنامه می‌گوید کجایی.
+16|NFC|ارتباط میدان نزدیک|NFC enables tap-to-pay.|NFC پرداخت با ضربه را ممکن می‌کند.
+17|IoT|اینترنت اشیا|IoT connects everyday devices online.|اینترنت اشیا دستگاه‌های روزمره را آنلاین به هم وصل می‌کند.
+17|sensor|حسگر|A sensor measures temperature.|حسگر دما را اندازه می‌گیرد.
+17|actuator|عملگر|An actuator moves the valve.|عملگر شیر را حرکت می‌دهد.
+17|embedded system|سیستم نهفته|An embedded system runs inside a device.|سیستم نهفته درون یک دستگاه اجرا می‌شود.
+17|microcontroller|ریزکنترل‌گر|A microcontroller controls simple hardware.|ریزکنترل‌گر سخت‌افزار ساده را کنترل می‌کند.
+17|Arduino|آردوینو|Arduino is a popular hobby board.|آردوینو یک برد محبوب سرگرمی است.
+17|Raspberry Pi|رزبری پای|The Raspberry Pi is a small single-board computer.|رزبری پای یک رایانه‌ی تک‌برد کوچک است.
+17|smart home|خانه هوشمند|A smart home adjusts lights automatically.|خانه‌ی هوشمند چراغ‌ها را خودکار تنظیم می‌کند.
+17|wearable|پوشیدنی|A wearable tracks your heart rate.|دستگاه پوشیدنی ضربان قلب شما را ردیابی می‌کند.
+17|RFID|شناسایی با امواج رادیویی|RFID tags identify items by radio.|برچسب‌های RFID اشیاء را با امواج رادیویی شناسایی می‌کنند.
+17|MQTT|پروتکل پیام‌رسانی|MQTT is a lightweight IoT protocol.|MQTT یک پروتکل سبک برای IoT است.
+17|edge computing|رایانش لبه|Edge computing processes data near the device.|رایانش لبه داده را نزدیک دستگاه پردازش می‌کند.
+17|real-time|بلادرنگ|The system gives real-time alerts.|سیستم هشدارهای بلادرنگ می‌دهد.
+17|automation|خودکارسازی|Home automation saves energy.|خودکارسازی خانه در مصرف انرژی صرفه‌جویی می‌کند.
+17|telemetry|دورسنجی|Telemetry sends readings to the cloud.|دورسنجی خوانش‌ها را به ابر می‌فرستد.
+17|digital twin|دوقلوی دیجیتال|A digital twin simulates a real machine.|دوقلوی دیجیتال یک ماشین واقعی را شبیه‌سازی می‌کند.
+17|smart city|شهر هوشمند|A smart city manages traffic better.|شهر هوشمند ترافیک را بهتر مدیریت می‌کند.
+18|blockchain|زنجیره بلوکی|A blockchain stores data in linked blocks.|بلاکچین داده را در بلوک‌های زنجیره‌ای ذخیره می‌کند.
+18|cryptocurrency|رمزارز|Bitcoin was the first cryptocurrency.|بیت‌کوین اولین رمزارز بود.
+18|Bitcoin|بیت‌کوین|Bitcoin is the most famous cryptocurrency.|بیت‌کوین مشهورترین رمزارز است.
+18|Ethereum|اتریوم|Ethereum supports smart contracts.|اتریوم از قراردادهای هوشمند پشتیبانی می‌کند.
+18|smart contract|قرارداد هوشمند|A smart contract runs automatically.|قرارداد هوشمند به‌صورت خودکار اجرا می‌شود.
+18|distributed ledger|دفتر کل توزیع‌شده|A distributed ledger is shared across nodes.|دفتر کل توزیع‌شده بین گره‌ها به اشتراک گذاشته می‌شود.
+18|mining|استخراج|Mining verifies new blocks.|استخراج بلوک‌های جدید را تأیید می‌کند.
+18|consensus|اجماع|Consensus keeps every node in sync.|اجماع همه‌ی گره‌ها را همگام نگه می‌دارد.
+18|proof of work|اثبات کار|Proof of work uses computational power.|اثبات کار از توان محاسباتی استفاده می‌کند.
+18|proof of stake|اثبات سهام|Proof of stake uses staked coins.|اثبات سهام از سکه‌های قفل‌شده استفاده می‌کند.
+18|wallet|کیف پول|Store your coins in a wallet.|سکه‌هایت را در یک کیف پول نگه دار.
+18|private key|کلید خصوصی|Never share your private key.|هرگز کلید خصوصی‌ات را به اشتراک نگذار.
+18|public key|کلید عمومی|The public key identifies your wallet.|کلید عمومی کیف پول شما را شناسایی می‌کند.
+18|hash function|تابع درهم‌ساز|A hash function turns data into a fixed code.|تابع درهم‌ساز داده را به یک کد ثابت تبدیل می‌کند.
+18|NFT|توکن غیرقابل تعویض|NFTs prove ownership of digital items.|NFTها مالکیت اقلام دیجیتال را اثبات می‌کنند.
+18|decentralized|غیرمتمرکز|A decentralized network has no central owner.|شبکه‌ی غیرمتمرکز مالک مرکزی ندارد.
+18|gas fee|کارمزد شبکه|Gas fees pay for blockchain transactions.|کارمزد شبکه هزینه‌ی تراکنش‌های بلاکچین را می‌دهد.
+19|DevOps|دواپس|DevOps joins development and operations.|دواپس توسعه و عملیات را به هم وصل می‌کند.
+19|CI/CD|یکپارچه‌سازی و تحویل پیوسته|CI/CD automates build and deploy.|CI/CD ساخت و استقرار را خودکار می‌کند.
+19|pipeline|خط لوله|The pipeline runs tests before deploy.|خط لوله تست‌ها را قبل از استقرار اجرا می‌کند.
+19|deployment|استقرار|Automated deployment reduces errors.|استقرار خودکار خطاها را کاهش می‌دهد.
+19|monitoring|پایش|Monitoring catches problems early.|پایش مشکلات را زود می‌گیرد.
+19|logging|ثبت رخداد|Central logging helps debug issues.|ثبت رخداد مرکزی به اشکال‌زدایی کمک می‌کند.
+19|infrastructure as code|زیرساخت به‌عنوان کد|Infrastructure as code defines servers in files.|زیرساخت به‌عنوان کد سرورها را در فایل تعریف می‌کند.
+19|rollback|بازگردانی|Rollback restores the previous version.|بازگردانی نسخه‌ی قبلی را برمی‌گرداند.
+19|staging|محیط آزمایشی|Test on staging before production.|قبل از تولید، در محیط آزمایشی تست کن.
+19|production|محیط عملیاتی|Production serves real users.|محیط عملیاتی به کاربران واقعی خدمت می‌کند.
+19|blue-green deployment|استقرار آبی-سبز|Blue-green deployment avoids downtime.|استقرار آبی-سبز از قطعی جلوگیری می‌کند.
+19|canary release|انتشار کناری|A canary release reaches a few users first.|انتشار کناری ابتدا به چند کاربر می‌رسد.
+19|incident|رخداد|The team handled the incident quickly.|تیم رخداد را سریع مدیریت کرد.
+19|uptime|زمان کارکرد|Aim for high uptime.|هدف، زمان کارکرد بالا باشد.
+19|shell script|اسکریپت شل|A shell script automates commands.|اسکریپت شل دستورها را خودکار می‌کند.
+19|configuration management|مدیریت پیکربندی|Configuration management keeps servers identical.|مدیریت پیکربندی سرورها را یکسان نگه می‌دارد.
+20|big data|کلان‌داده|Big data needs special tools.|کلان‌داده به ابزارهای ویژه نیاز دارد.
+20|data mining|داده‌کاوی|Data mining reveals hidden patterns.|داده‌کاوی الگوهای پنهان را آشکار می‌کند.
+20|data analysis|تحلیل داده|Data analysis turns numbers into insight.|تحلیل داده اعداد را به بینش تبدیل می‌کند.
+20|data visualization|مصورسازی داده|Data visualization communicates results.|مصورسازی داده نتایج را منتقل می‌کند.
+20|Hadoop|هدوپ|Hadoop processes data across many machines.|هدوپ داده را روی ماشین‌های زیادی پردازش می‌کند.
+20|Spark|اسپارک|Spark is fast for big data jobs.|اسپارک برای کارهای کلان‌داده سریع است.
+20|MapReduce|نگاشت-کاهش|MapReduce splits work across nodes.|نگاشت-کاهش کار را بین گره‌ها تقسیم می‌کند.
+20|data lake|دریاچه داده|A data lake stores raw data.|دریاچه داده، داده‌ی خام را ذخیره می‌کند.
+20|data warehouse|انبار داده|A data warehouse stores structured data.|انبار داده داده‌ی ساختاریافته را ذخیره می‌کند.
+20|ETL|استخراج، تبدیل، بارگذاری|ETL moves data into the warehouse.|ETL داده را به انبار منتقل می‌کند.
+20|stream processing|پردازش جریانی|Stream processing handles data live.|پردازش جریانی داده را زنده مدیریت می‌کند.
+20|dashboard|داشبورد|The dashboard shows KPIs.|داشبورد شاخص‌های کلیدی را نشان می‌دهد.
+20|KPI|شاخص کلیدی عملکرد|Track KPIs to measure success.|برای اندازه‌گیری موفقیت، KPIها را ردیابی کن.
+20|statistics|آمار|Statistics helps summarize data.|آمار به خلاصه‌سازی داده کمک می‌کند.
+20|regression|رگرسیون|Regression predicts a numeric value.|رگرسیون یک مقدار عددی را پیش‌بینی می‌کند.
+20|clustering|خوشه‌بندی|Clustering groups similar records.|خوشه‌بندی رکوردهای مشابه را گروه‌بندی می‌کند.
+20|classification|طبقه‌بندی|Classification assigns a category.|طبقه‌بندی یک دسته اختصاص می‌دهد.
+20|correlation|همبستگی|Correlation measures how two variables move.|همبستگی اندازه‌ی حرکت دو متغیر را می‌سنجد.
+20|Jupyter|ژوپیتر|Jupyter runs notebooks for analysis.|ژوپیتر نوتبوک‌ها را برای تحلیل اجرا می‌کند.
+20|pandas|پاندااس|pandas is a Python data library.|پاندااس یک کتابخانه‌ی داده در پایتون است.
+`;
+
+const D = RAW.trim().split("\n").map((l, i) => {
+  const parts = l.split("|");
+  return { i, u: +parts[0], e: parts[1], f: parts[2], x: parts[3], t: parts[4] || "" };
 });
 
-const TR = {};
-`
-scan|من حدود یک سوم عکس‌ها را اسکن کردم.
-clipart|لوئیز در نقاشی‌هایش از تصاویر آماده استفاده می‌کند.
-download|آیا تا حالا موسیقی از اینترنت دانلود کرده‌ای؟
-search engine|از کدام موتور جستجو استفاده کردی؟
-expansion card|او هفته‌ی گذشته یک کارت توسعه نصب کرد.
-virus|رایانه‌ی من ویروس دارد.
-smart card|کارت هوشمند سوابق پزشکی و موجودی بانکی را ذخیره می‌کند.
-expert system|سیستم خبره به پزشکان کمک می‌کند بیماری بیمار را تشخیص دهند.
-multimedia|چندرسانه‌ای متن را با صدا، ویدیو و انیمیشن ترکیب می‌کند.
-edutainment|آموزش سرگرم‌کننده هم آموزشی است و هم سرگرم‌کننده.
-telecommute|بسیاری از مردم از خانه دورکاری می‌کنند.
-videoconferencing|ویدیوکنفرانس افراد را در مکان‌های دور به هم وصل می‌کند.
-connectivity|قابلیت اتصال به سیستم‌های ناسازگار اجازه‌ی اشتراک منابع می‌دهد.
-handheld computer|کارکنان در محل مشتری از رایانه‌ی دستی استفاده می‌کنند.
-information superhighway|بزرگراه اطلاعات دسترسی رایگان به منابع را فراهم می‌کند.
-hardware|سخت‌افزار برای کار کردن به نرم‌افزار نیاز دارد.
-software|نرم‌افزار کاربردی به کاربران در نوشتن اسناد کمک می‌کند.
-network|شبکه به رایانه‌ها اجازه‌ی اشتراک منابع می‌دهد.
-distance learning|آموزش از راه دور با کلاس الکترونیکی ممکن است.
-inventory|کارکنان با رایانه‌ی دستی موجودی را کنترل می‌کنند.
-supervision|بسیاری از ماشین‌ها زمانی به نظارت انسان نیاز داشتند.
-smart house|خانه‌ی هوشمند می‌تواند چراغ‌ها را روشن و خاموش کند.
-present perfect|من یک ترک صوتی اضافه کرده‌ام.
-past simple|من هفته‌ی پیش یکی برای تولد مری ساختم.
-processor|پردازنده با سرعت سه گیگاهرتز کار می‌کند.
-clock speed|سرعت کلاک بالاتر رایانه را سریع‌تر می‌کند.
-front-side bus (FSB)|گذرگاه جلویی با سرعت ۸۰۰ مگاهرتز کار می‌کند.
-SDRAM|این رایانه ۱ گیگابایت SDRAM دارد.
-hard drive|یک هارد ۲۰۰ گیگابایتی تمام فایل‌های من را ذخیره می‌کند.
-chassis|یک شاسی مینی‌تاور سیستم رایانه را در بر می‌گیرد.
-resolution|وضوح نمایشگر ۱۰۲۴ در ۷۶۸ است.
-TFT monitor|نمایشگر تخت ۱۹ اینچی TFT در فضای میز صرفه‌جویی می‌کند.
-motherboard|با افزودن مادربرد جدید می‌توانی رایانه‌ات را ارتقا دهی.
-bus|داده‌ها در طول گذرگاه داده منتقل می‌شوند.
-cache memory|حافظه‌ی نهان از حافظه‌ی اصلی سریع‌تر است.
-cache hit|اصابت به کش یعنی داده از قبل در کش بوده است.
-cache controller|کنترل‌کننده‌ی کش کل فرایند کش‌کردن را مدیریت می‌کند.
-cache coherency|هماهنگی کش، کش و حافظه‌ی اصلی را سازگار نگه می‌دارد.
-write-through cache|کش نوشتن مستقیم امن‌ترین اما کندترین راه‌حل است.
-write-back cache|کش نوشتن با تأخیر به کنترل‌کننده‌ی هوشمندتری نیاز دارد.
-bottleneck|سرعت حافظه اغلب گلوگاه رایانه است.
-buffer|کش مانند بافری میان حافظه و پردازنده عمل می‌کند.
-peripheral|چاپگر دستگاه جانبی است که به رایانه متصل شده است.
-UPS|یو‌پی‌اس رایانه را از قطع برق محافظت می‌کند.
-shut down|قبل از باز کردن رایانه آن را خاموش کنید.
-unplug|همه‌ی کابل‌ها به جز کابل برق را از برق بکشید.
-CPU|CPU مغز رایانه است.
-RAM|داده بین CPU و RAM جابه‌جا می‌شود.
-ROM|داده از ROM به CPU جریان می‌یابد.
-gigabyte|هارد ۲۰۰ گیگابایت فضای ذخیره‌سازی دارد.
-megahertz|گذرگاه با ۸۰۰ مگاهرتز کار می‌کند.
-graphics card|کارت گرافیک نمایشگر را راه می‌برد.
-optical drive|درایو DVD یک درایو نوری است.
-track|شیارها به قطاع‌ها تقسیم می‌شوند.
-sector|هر شیار به قطاع‌ها تقسیم می‌شود.
-radar|رادار پرتویی از امواج رادیویی ارسال می‌کند.
-microprocessor|ریزپردازنده سرعت هر خودرو را محاسبه می‌کند.
-OCR|نرم‌افزار OCR پلاک‌ها را می‌خواند.
-database|مالک خودرو با پایگاه داده ردیابی می‌شود.
-mailmerge|یک نامه‌ی استاندارد با ادغام نامه چاپ می‌شود.
-barcode|اسکنر بارکد روی کالا را می‌خواند.
-EPOS till|صندوق فروش کالا و قیمت را روی رسید چاپ می‌کند.
-data link|یک پیوند داده دو دوربین را به هم وصل می‌کند.
-data mining|داده‌کاوی حجم زیادی داده‌ی خام را پالایش می‌کند.
-artificial intelligence|هوش مصنوعی می‌کوشد مانند مغز انسان کار کند.
-neural network|شبکه‌ی عصبی داده‌ها را مقایسه می‌کند تا الگوها پدیدار شوند.
-cluster|خوشه‌بندی داده‌ها را به گروه‌های مشابه تقسیم می‌کند.
-decision tree|درخت تصمیم داده‌ها را به زیرمجموعه‌ها تقسیم می‌کند.
-data warehouse|انبار داده حجم عظیمی از داده را بایگانی می‌کند.
-cleanse data|باید داده را پاک‌سازی کنی تا موارد تکراری و خطاها حذف شوند.
-speed trap|پلیس روی جاده دوربین کنترل سرعت نصب کرد.
-wavelength|سیگنال بازتابیده طول موج کوچک‌تری دارد.
-frequency|رادار از بسامد ۲۴ گیگاهرتز استفاده می‌کند.
-registration number|شماره‌ی پلاک با OCR خوانده می‌شود.
-receipt|صندوق یک رسید کاغذی چاپ می‌کند.
-stock file|رایانه فایل موجودی را جستجو می‌کند.
-present passive|اطلاعات روی یک کارت هوشمند ذخیره می‌شود.
-input device|صفحه‌کلید یک دستگاه ورودی است.
-output device|چاپگر یک دستگاه خروجی است.
-CCD|لنز تصویر را روی CCD متمرکز می‌کند.
-pixel|پیکسل یک نقطه‌ی ریز از تصویر است.
-viewfinder|برای نشانه‌روی دقیق از منظره‌یاب استفاده کن.
-LCD screen|می‌توانی تصاویر را روی صفحه‌ی LCD ببینی.
-memory card|دوربین‌های دیجیتال تصاویر را روی کارت حافظه ذخیره می‌کنند.
-rechargeable battery|باتری قابل شارژ در هزینه صرفه‌جویی می‌کند.
-conventional|دوربین معمولی از فیلم استفاده می‌کند.
-ink-jet printer|چاپگر جوهرافشان ارزان است و رنگ خوبی می‌دهد.
-laser printer|چاپگر لیزری کیفیت متن عالی می‌دهد.
-removable hard disk|هارد دیسک قابل جابجایی حمل آسانی دارد.
-magnetic tape|نوار مغناطیسی برای پشتیبان‌گیری از داده‌های حجیم استفاده می‌شود.
-flash drive|می‌توانی روی فلش درایو بخوانی و بنویسی.
-capacity|ظرفیت DVD از CD بیشتر است.
-areal density|چگالی سطحی در دهه‌ی ۱۹۹۰ هر ۱۸ ماه دو برابر شد.
-holographic storage|ذخیره‌سازی هولوگرافیک سه‌بعدی است.
-scanner|اسکنر تصاویر چاپی را وارد می‌کند.
-microphone|میکروفون صدا را ضبط می‌کند.
-touch screen|صفحه‌ی لمسی در پایانه‌های عمومی استفاده می‌شود.
-joystick|در بازی اکشن سریع از دسته‌ی بازی استفاده کن.
-plotter|پلاتر نقشه‌های ساختمان را چاپ می‌کند.
-headphones|هدفون اجازه می‌دهد بدون مزاحمت برای دیگران گوش دهی.
-keyboard|برای وارد کردن متن زیاد از صفحه‌کلید استفاده کن.
-back up|فایل‌هایت را مرتب پشتیبان‌گیری کن.
-upgrade|می‌توانی رایانه‌ات را با مادربرد جدید ارتقا دهی.
-free up|چند فایل را پاک کن تا فضا آزاد شود.
-upload|داده‌ها هر شب به مین‌فریم بارگذاری می‌شوند.
-start up|وقتی رایانه را روشن می‌کنی سیستم‌عامل بوت می‌شود.
-update|نرم‌افزارت را به‌روز کن تا باگ‌ها رفع شوند.
-build up|او دوره‌ای می‌گذراند تا دانش خود را تقویت کند.
-set up|او برای شرکت مسافرتی‌اش یک وب‌سایت راه انداخت.
-keep up|مجله‌های رایانه بخوان تا با پیشرفت‌ها همگام بمانی.
-catch up|جزوه‌ها را بخوان تا عقب‌ماندگی را جبران کنی.
-operating system|سیستم‌عامل بین نرم‌افزار و سخت‌افزار قرار دارد.
-kernel|هسته تخصیص حافظه را مدیریت می‌کند.
-source code|بدون کد منبع نمی‌توانی باگ‌ها را رفع کنی.
-supervisor program|برنامه‌ی ناظر کل سیستم‌عامل را کنترل می‌کند.
-resident program|برنامه‌ی مقیم در حافظه می‌ماند.
-non-resident program|برنامه‌های غیرمقیم فقط در صورت نیاز بارگذاری می‌شوند.
-command line|لینوکس خط فرمان و رابط گرافیکی دارد.
-open source|متن‌باز یعنی هر کسی می‌تواند مشارکت کند.
-distribution|توزیع یک بسته‌ی کامل سیستم‌عامل است.
-multitasking|چندوظیفگی پیش‌دستانه چند برنامه را همزمان اجرا می‌کند.
-log on|او نمی‌تواند به ورود با گذرواژه عادت کند.
-password|گذرواژه‌ی ورودت را وارد کن.
-directory|دستور ls همه‌ی فایل‌های یک پوشه را فهرست می‌کند.
-freeware|برخی سیستم‌عامل‌ها به‌صورت رایگان توزیع می‌شوند.
-Unix|یونیکس سیستم‌عامل شگفت‌انگیز دهه‌ی ۷۰ بود.
-Linux|لینوکس به‌عنوان یک پروژه‌ی دانشجویی شروع شد.
-user interface|سیستم‌عامل رابط کاربری را برقرار می‌کند.
-memory allocation|هسته تخصیص حافظه را انجام می‌دهد.
-bug|برنامه‌نویسان باگ‌های کد را رفع می‌کنند.
-GUI|رابط گرافیکی به تو اجازه می‌دهد به آیکون‌ها اشاره و کلیک کنی.
-window|هر برنامه در پنجره‌ی خودش باز می‌شود.
-icon|روی آیکون دوبار کلیک کن تا برنامه شروع شود.
-menu|از منو گزینه‌ی خاموش کردن را انتخاب کن.
-submenu|وقتی به گزینه اشاره کنی زیرمنو باز می‌شود.
-taskbar|نوار وظیفه برنامه‌های در حال اجرا را نشان می‌دهد.
-system tray|ساعت در ناحیه‌ی اعلان است.
-desktop|آیکون‌ها روی دسکتاپ چیده شده‌اند.
-button|روی دکمه‌ی Start کلیک کن.
-scrollbar|از نوار پیمایش برای دیدن بخش‌های بیشتر پنجره استفاده کن.
-Recycle Bin|فایل‌های پاک‌شده به سطل بازیافت می‌روند.
-dock|داک دسترسی فوری به برنامه‌هایت می‌دهد.
-folder|روی پوشه دوبار کلیک کن تا محتوایش نمایش داده شود.
-drag and drop|فایل را بکش و در پوشه رها کن.
-tooltip|وقتی نشانگر را روی دکمه نگه داری راهنمای شناور ظاهر می‌شود.
-right-click|روی فایل راست‌کلیک کن، سپس Cut را بزن.
-speech recognition|تشخیص گفتار طراحی رابط‌ها را تغییر خواهد داد.
-multimodal interface|رابط چندحالته چند نوع ورودی را ترکیب می‌کند.
-intelligent agent|عامل هوشمند کارهای تکراری را خودکار می‌کند.
-text to speech (TTS)|TTS به رایانه اجازه می‌دهد متن را بلند بخواند.
-enable|نرم‌افزار صوتی کاربران معلول را قادر به استفاده از رایانه می‌کند.
-cursor|نشانگر را به آیکون ببر.
-shortcut menu|روی منوی میان‌بر Cut را بزن.
-clipboard|تصویر را در کلیپ‌بورد کپی کن.
-hover|نشانگر را روی دکمه نگه دار تا راهنما را ببینی.
-select|فایلی را که می‌خواهی جابجا کنی انتخاب کن.
-handwriting recognition|رایانه‌ها تشخیص دست‌خط خواهند داشت.
-spreadsheet|صفحه‌گسترده حقوق‌ها را خودکار محاسبه می‌کند.
-word processor|گزارش را با واژه‌پرداز نوشتم.
-DTP|از نرم‌افزار نشر رومیزی برای تهیه‌ی خبرنامه استفاده می‌شود.
-PIM|PIM مخاطبین و قرارهای ملاقات را ذخیره می‌کند.
-file server|سرور فایل در پذیرش است.
-LAN|مرکز پزشکی از یک شبکه‌ی محلی استفاده می‌کند.
-payroll|بسته‌ی حقوق و دستمزد، حقوق‌ها را محاسبه می‌کند.
-search criteria|معیارهای جستجو را وارد کن، سپس روی Find بزن.
-tab|روی زبانه‌ی Address کلیک کن.
-application service provider|نرم‌افزارها را از یک ارائه‌دهنده‌ی سرویس اجاره می‌کنی.
-bandwidth|برنامه‌های راه‌دور به پهنای باند زیادی نیاز دارند.
-broadband|اتصال پهن‌باند سریع است.
-office suite|مجموعه‌ی آفیس شامل واژه‌پرداز و صفحه‌گسترده است.
-outsource|بسیاری از شرکت‌ها خدمات ایمیل خود را برون‌سپاری می‌کنند.
-e-commerce|کسب‌وکارهای تجارت الکترونیک به فضای ذخیره‌ی زیادی نیاز دارند.
-data centre|ارائه‌دهندگان فضا را از یک مرکز داده اجاره می‌کنند.
-autocorrect|می‌توانی تصحیح خودکار را غیرفعال کنی.
-presentation program|فروشنده از برنامه‌ی ارائه استفاده می‌کند.
-email|کارکنان پذیرش به بیماران ایمیل می‌فرستند.
-website editor|ویرایشگر وب‌سایت به ساخت سایت شرکت کمک می‌کند.
-developer tools|برنامه‌نویسان به ابزارهای توسعه نیاز دارند.
-appointment|پذیرش هر وقت ملاقات را در سیستم وارد می‌کند.
-diagnosis|پزشک تشخیص و درمان را وارد می‌کند.
-prescribe|سیستم به پزشکان در تجویز دارو کمک می‌کند.
-flexibility|ارائه‌دهنده‌ی سرویس انعطاف‌پذیری بیشتری می‌دهد.
-reliable|سرویس باید امن و قابل اعتماد باشد.
-secure|برای داده‌هایت سرویس امن انتخاب کن.
-ASP|ASP دسترسی از راه دور به نرم‌افزار را فراهم می‌کند.
-`.trim().split("\n").forEach(l=>{
-  const i = l.indexOf("|");
-  TR[l.slice(0,i)] = l.slice(i+1);
-});
-
-/* Speech */
+/* ===== Speech ===== */
 const syn = window.speechSynthesis;
 let voice;
 function pick(){
@@ -614,6 +990,8 @@ function pick(){
 if(syn){ pick(); syn.onvoiceschanged = pick; }
 
 const ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const STAR_OUTLINE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>';
+const STAR_FILLED = '<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg>';
 
 function say(t,b){
   if(!syn){ alert("مرورگر شما از تلفظ پشتیبانی نمی‌کند"); return; }
@@ -622,44 +1000,107 @@ function say(t,b){
   s.lang = "en-US"; s.rate = .85;
   if(voice) s.voice = voice;
   document.querySelectorAll(".sp.on").forEach(x=>x.classList.remove("on"));
-  b.classList.add("on");
-  s.onend = s.onerror = ()=>b.classList.remove("on");
+  if(b) b.classList.add("on");
+  s.onend = s.onerror = ()=>{ if(b) b.classList.remove("on"); };
   syn.speak(s);
 }
 
-/* Render */
+/* ===== Favorites (localStorage) ===== */
+const FAV_KEY = "itvocab_favs_v1";
+let favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]"));
+const saveFavs = () => localStorage.setItem(FAV_KEY, JSON.stringify([...favs]));
+const isFav = w => favs.has(w);
+
+/* ===== Known cards for flashcards ===== */
+const KNOWN_KEY = "itvocab_known_v1";
+let known = new Set(JSON.parse(localStorage.getItem(KNOWN_KEY) || "[]"));
+const saveKnown = () => localStorage.setItem(KNOWN_KEY, JSON.stringify([...known]));
+
+/* ===== Search normalization (Persian) ===== */
+const norm = s => s.toLowerCase()
+  .replace(/ي/g, "ی").replace(/ك/g, "ک")
+  .replace(/[\u064B-\u065F]/g, "")
+  .trim();
+
+/* ===== State ===== */
 let cur = 0;
+let studyMode = false;
+let favOnly = false;
+let flashMode = false;
+let flashIdx = 0;
+let flashDeck = []; // filtered list for flashcards
+let flipped = false;
+
 const L = document.getElementById("list");
 const Q = document.getElementById("q");
 const C = document.getElementById("chips");
 
-[["همه",0],...Object.entries(U).map(([k,v])=>[v.split(" · ")[0],+k])].forEach(([t,k])=>{
+/* ===== Unit counts ===== */
+const counts = {};
+D.forEach(d => counts[d.u] = (counts[d.u] || 0) + 1);
+const total = D.length;
+
+/* ===== Build chips ===== */
+[["همه", 0], ...Object.keys(U).map(k => [SHORT[+k] || U[+k], +k])].forEach(([t, k]) => {
   const b = document.createElement("button");
-  b.className = "chip"; b.textContent = t; b.dataset.k = k;
-  b.setAttribute("aria-pressed", k==0);
-  b.onclick = ()=>{
+  b.className = "chip";
+  b.dataset.k = k;
+  const n = k === 0 ? total : counts[k];
+  b.innerHTML = `${t} <span class="n">(${n})</span>`;
+  b.setAttribute("aria-pressed", k == 0);
+  b.onclick = () => {
     cur = k;
-    C.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));
-    render();
+    C.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+    if (flashMode) {
+      buildFlashDeck();
+      flashIdx = 0;
+      flipped = false;
+      showFlashCard();
+    } else {
+      render();
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   C.append(b);
 });
 
-function esc(s){
-  return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+/* ===== Escape ===== */
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ===== Filtered list helper ===== */
+function getFiltered() {
+  const q = norm(Q.value);
+  return D.filter(d => {
+    if (cur && d.u !== cur) return false;
+    if (favOnly && !isFav(d.e)) return false;
+    if (!q) return true;
+    return norm(d.e + " " + d.f + " " + d.x + " " + d.t).includes(q);
+  });
 }
 
+/* ===== Render list ===== */
 function render(){
-  const q = Q.value.trim().toLowerCase();
-  const r = D.map((d,i)=>({...d,i})).filter(d=>(!cur||d.u==cur)&&(!q||(d.e+d.f+d.x).toLowerCase().includes(q)));
-  document.getElementById("cnt").textContent = r.length + " لغت · © 3INA3";
-  L.innerHTML = r.map(d=>`
-    <article class="card glass">
+  const r = getFiltered();
+
+  const badges = [];
+  badges.push(`<span>${r.length} لغت از ${total}</span>`);
+  if (favOnly) badges.push(`<span>⭐ فقط علاقه‌مندی‌ها</span>`);
+  if (studyMode) badges.push(`<span>📖 حالت مطالعه فعال</span>`);
+  document.getElementById("cnt").innerHTML = badges.join(" · ") + " · © 3INA3";
+
+  if (!r.length) {
+    L.innerHTML = `<div class="empty"><div class="icon">🔍</div><p>واژه‌ای پیدا نشد</p><p style="font-size:.8rem">جستجو یا فیلتر را تغییر دهید</p></div>`;
+    return;
+  }
+
+  L.innerHTML = r.map(d => `
+    <article class="card glass" data-w="${esc(d.e)}">
       <div class="w">
-        <div>
+        <div class="txt">
           <div class="en">${esc(d.e)}</div>
           <div class="u">${U[d.u]}</div>
         </div>
+        <button class="star ${isFav(d.e) ? "on" : ""}" data-w="${esc(d.e)}" aria-label="علاقه‌مندی">${isFav(d.e) ? STAR_FILLED : STAR_OUTLINE}</button>
         <button class="sp" data-i="${d.i}" data-t="w" aria-label="تلفظ ${esc(d.e)}">${ICON}</button>
       </div>
       <div class="fa">${esc(d.f)}</div>
@@ -667,18 +1108,288 @@ function render(){
         <button class="sp s" data-i="${d.i}" data-t="x" aria-label="تلفظ جمله">${ICON}</button>
         <span>${esc(d.x)}</span>
       </div>
-      <div class="tr">${esc(TR[d.e]||"")}</div>
+      <div class="tr">${esc(d.t || "")}</div>
     </article>`).join("");
 }
 
-L.onclick = e=>{
-  const b = e.target.closest(".sp");
-  if(!b) return;
-  const d = D[b.dataset.i];
-  say(b.dataset.t=="w" ? d.e.replace(/\(.*?\)/g,"") : d.x, b);
+/* ===== Event delegation for list ===== */
+L.addEventListener("click", e => {
+  const sp = e.target.closest(".sp");
+  if (sp) {
+    const d = D[+sp.dataset.i];
+    say(sp.dataset.t === "w" ? d.e.replace(/\(.*?\)/g, "").trim() : d.x, sp);
+    return;
+  }
+  const star = e.target.closest(".star");
+  if (star) {
+    const w = star.dataset.w;
+    if (favs.has(w)) favs.delete(w); else favs.add(w);
+    saveFavs();
+    star.classList.toggle("on", favs.has(w));
+    star.innerHTML = favs.has(w) ? STAR_FILLED : STAR_OUTLINE;
+    if (favOnly && !favs.has(w)) render();
+    return;
+  }
+  if (studyMode) {
+    const el = e.target.closest(".fa, .tr");
+    if (el) el.classList.toggle("revealed");
+  }
+});
+
+Q.oninput = () => {
+  if (flashMode) {
+    buildFlashDeck();
+    flashIdx = 0;
+    flipped = false;
+    showFlashCard();
+  } else {
+    render();
+  }
 };
 
-Q.oninput = render;
+/* ===== Toolbar ===== */
+const studyBtn = document.getElementById("study");
+studyBtn.onclick = () => {
+  studyMode = !studyMode;
+  document.body.classList.toggle("study", studyMode);
+  studyBtn.setAttribute("aria-pressed", studyMode);
+  studyBtn.textContent = studyMode ? "📖 مطالعه (فعال)" : "📖 حالت مطالعه";
+  if (!flashMode) render();
+};
+
+const favBtn = document.getElementById("favOnly");
+favBtn.onclick = () => {
+  favOnly = !favOnly;
+  favBtn.setAttribute("aria-pressed", favOnly);
+  if (flashMode) {
+    buildFlashDeck();
+    flashIdx = 0;
+    flipped = false;
+    showFlashCard();
+  } else {
+    render();
+  }
+};
+
+document.getElementById("random").onclick = () => {
+  const cards = L.querySelectorAll(".card");
+  if (!cards.length) return;
+  const c = cards[Math.floor(Math.random() * cards.length)];
+  c.scrollIntoView({ behavior: "smooth", block: "center" });
+  c.classList.remove("pulse");
+  void c.offsetWidth;
+  c.classList.add("pulse");
+  setTimeout(() => c.classList.remove("pulse"), 1600);
+};
+
+document.getElementById("print").onclick = () => window.print();
+
+/* ===== Flashcard Logic ===== */
+const flashBtn = document.getElementById("flash");
+const flashCardEl = document.getElementById("flash-card");
+
+function buildFlashDeck() {
+  // Prefer cards that are not yet "known", but keep all if user wants
+  let base = getFiltered();
+  // Sort so unknown come first
+  flashDeck = base.slice().sort((a, b) => {
+    const ka = known.has(a.e) ? 1 : 0;
+    const kb = known.has(b.e) ? 1 : 0;
+    return ka - kb;
+  });
+}
+
+function updateFlashUI() {
+  const totalDeck = flashDeck.length;
+  const current = totalDeck ? flashIdx + 1 : 0;
+  document.getElementById("flash-counter").textContent = `${current.toLocaleString("fa-IR")} از ${totalDeck.toLocaleString("fa-IR")}`;
+  const pct = totalDeck ? Math.round((current / totalDeck) * 100) : 0;
+  document.getElementById("flash-bar").style.width = pct + "%";
+
+  let deckInfo = cur ? SHORT[cur] || U[cur] : "همه لغات";
+  if (favOnly) deckInfo += " · فقط علاقه‌مندی‌ها";
+  document.getElementById("flash-deck-info").textContent = deckInfo;
+
+  const knownCount = flashDeck.filter(d => known.has(d.e)).length;
+  document.getElementById("fc-known-count").textContent = knownCount.toLocaleString("fa-IR") + " بلدم";
+  document.getElementById("fc-remaining").textContent = (totalDeck - knownCount).toLocaleString("fa-IR") + " باقی‌مانده";
+
+  document.getElementById("fc-prev").disabled = flashIdx <= 0;
+  document.getElementById("fc-next").disabled = flashIdx >= totalDeck - 1;
+}
+
+function showFlashCard() {
+  if (!flashDeck.length) {
+    document.getElementById("fc-en").textContent = "لغتی وجود ندارد";
+    document.getElementById("fc-fa").textContent = "فیلتر را تغییر دهید";
+    document.getElementById("fc-ex").textContent = "";
+    document.getElementById("fc-tr").textContent = "";
+    document.getElementById("fc-unit").textContent = "";
+    flashCardEl.classList.remove("flipped");
+    updateFlashUI();
+    return;
+  }
+  const d = flashDeck[flashIdx];
+  document.getElementById("fc-en").textContent = d.e;
+  document.getElementById("fc-fa").textContent = d.f;
+  document.getElementById("fc-ex").textContent = d.x;
+  document.getElementById("fc-tr").textContent = d.t || "";
+  document.getElementById("fc-unit").textContent = U[d.u];
+
+  // star state
+  const starBtn = document.getElementById("fc-star");
+  starBtn.classList.toggle("on", isFav(d.e));
+  starBtn.innerHTML = isFav(d.e) ? STAR_FILLED : STAR_OUTLINE;
+
+  if (flipped) flashCardEl.classList.add("flipped");
+  else flashCardEl.classList.remove("flipped");
+
+  updateFlashUI();
+}
+
+function flipCard() {
+  flipped = !flipped;
+  flashCardEl.classList.toggle("flipped", flipped);
+}
+
+function goNext() {
+  if (flashIdx < flashDeck.length - 1) {
+    flashIdx++;
+    flipped = false;
+    showFlashCard();
+  }
+}
+function goPrev() {
+  if (flashIdx > 0) {
+    flashIdx--;
+    flipped = false;
+    showFlashCard();
+  }
+}
+
+function markKnown() {
+  if (!flashDeck.length) return;
+  const d = flashDeck[flashIdx];
+  known.add(d.e);
+  saveKnown();
+  // Move to next unknown if possible
+  goNext();
+  // If we reached the end, rebuild to put known at the end
+  if (flashIdx >= flashDeck.length - 1) {
+    buildFlashDeck();
+    flashIdx = Math.min(flashIdx, flashDeck.length - 1);
+    showFlashCard();
+  }
+}
+
+function markAgain() {
+  if (!flashDeck.length) return;
+  const d = flashDeck[flashIdx];
+  known.delete(d.e);
+  saveKnown();
+  // Put it back near the front (simple: just go next)
+  goNext();
+}
+
+function shuffleDeck() {
+  // Fisher-Yates
+  for (let i = flashDeck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [flashDeck[i], flashDeck[j]] = [flashDeck[j], flashDeck[i]];
+  }
+  flashIdx = 0;
+  flipped = false;
+  showFlashCard();
+}
+
+/* Flash button toggle */
+flashBtn.onclick = () => {
+  flashMode = !flashMode;
+  document.body.classList.toggle("flash", flashMode);
+  flashBtn.setAttribute("aria-pressed", flashMode);
+  flashBtn.textContent = flashMode ? "🃏 خروج از فلش‌کارت" : "🃏 فلش‌کارت";
+
+  if (flashMode) {
+    buildFlashDeck();
+    flashIdx = 0;
+    flipped = false;
+    showFlashCard();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    render();
+  }
+};
+
+/* Flash controls */
+document.getElementById("fc-flip").onclick = flipCard;
+document.getElementById("fc-prev").onclick = goPrev;
+document.getElementById("fc-next").onclick = goNext;
+document.getElementById("fc-know").onclick = markKnown;
+document.getElementById("fc-again").onclick = markAgain;
+document.getElementById("fc-shuffle").onclick = shuffleDeck;
+
+flashCardEl.addEventListener("click", e => {
+  // Don't flip if clicking buttons
+  if (e.target.closest("button")) return;
+  flipCard();
+});
+
+document.getElementById("fc-say-en").onclick = e => {
+  e.stopPropagation();
+  const d = flashDeck[flashIdx];
+  if (d) say(d.e.replace(/\(.*?\)/g, "").trim(), e.currentTarget);
+};
+document.getElementById("fc-say-ex").onclick = e => {
+  e.stopPropagation();
+  const d = flashDeck[flashIdx];
+  if (d) say(d.x, e.currentTarget);
+};
+document.getElementById("fc-star").onclick = e => {
+  e.stopPropagation();
+  const d = flashDeck[flashIdx];
+  if (!d) return;
+  if (favs.has(d.e)) favs.delete(d.e); else favs.add(d.e);
+  saveFavs();
+  e.currentTarget.classList.toggle("on", favs.has(d.e));
+  e.currentTarget.innerHTML = favs.has(d.e) ? STAR_FILLED : STAR_OUTLINE;
+};
+
+/* ===== Keyboard shortcuts ===== */
+document.addEventListener("keydown", e => {
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea") {
+    if (e.key === "Escape") { Q.value = ""; Q.blur(); if (flashMode) { buildFlashDeck(); flashIdx=0; showFlashCard(); } else render(); }
+    return;
+  }
+  if (e.key === "/") { e.preventDefault(); Q.focus(); return; }
+  if (e.key === "Escape") {
+    if (flashMode) {
+      flashMode = false;
+      document.body.classList.remove("flash");
+      flashBtn.setAttribute("aria-pressed", false);
+      flashBtn.textContent = "🃏 فلش‌کارت";
+      render();
+    } else {
+      Q.value = ""; render();
+    }
+    return;
+  }
+
+  // Flashcard shortcuts
+  if (flashMode) {
+    if (e.key === " " || e.key === "Enter") { e.preventDefault(); flipCard(); }
+    else if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      // RTL: left = next, right = prev (or keep standard)
+      if (e.key === "ArrowLeft") goNext();
+      else goPrev();
+    }
+    else if (e.key === "s" || e.key === "S" || e.key === "ش") { e.preventDefault(); shuffleDeck(); }
+    else if (e.key === "k" || e.key === "K" || e.key === "ب") { e.preventDefault(); markKnown(); }
+    else if (e.key === "a" || e.key === "A" || e.key === "ه") { e.preventDefault(); markAgain(); }
+  }
+});
+
 render();
 </script>
 </body>
